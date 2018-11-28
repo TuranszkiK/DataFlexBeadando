@@ -4138,695 +4138,697 @@ Including file: Ugyfel.fd    (C:\Repos\DataFlexBeadando\DDSrc\Ugyfel.fd)
 81804>>>>>
 81804>>>>>        Set Field_Label_Long Field Ugyfel.Telefon to "Telefon"
 81805>>>>>        Set Field_Label_Short Field Ugyfel.Telefon to "tel."
-81806>>>>>
-81806>>>>>        Set Field_Label_Long Field Ugyfel.Bankszamla to "Banksz mla"
-81807>>>>>        Set Field_Label_Short Field Ugyfel.Bankszamla to "Bszla."
-81808>>>>>
-81808>>>>>    End_Procedure
-81809>>>>>
-81809>>>>>End_Class
+81806>>>>>        Set Field_Mask Field Ugyfel.Telefon to "+##-##-###-####"
+81807>>>>>
+81807>>>>>        Set Field_Label_Long Field Ugyfel.Bankszamla to "Banksz mla"
+81808>>>>>        Set Field_Label_Short Field Ugyfel.Bankszamla to "Bszla."
+81809>>>>>        Set Field_Mask Field Ugyfel.Bankszamla to "#######-########-########"
 81810>>>>>
-81810>>>>>Use Ugyfel.sl
+81810>>>>>    End_Procedure
+81811>>>>>
+81811>>>>>End_Class
+81812>>>>>
+81812>>>>>Use Ugyfel.sl
 Including file: Ugyfel.sl    (C:\Repos\DataFlexBeadando\AppSrc\Ugyfel.sl)
-81810>>>>>>>// Ugyfel.sl
-81810>>>>>>>// Ugyfel Lookup List
-81810>>>>>>>
-81810>>>>>>>Use DFClient.pkg
-81810>>>>>>>Use cDbCJGridPromptList.pkg
-81810>>>>>>>Use cDbCJGridColumn.pkg
-81810>>>>>>>Use Windows.pkg
-81810>>>>>>>
-81810>>>>>>>Use cUgyfelDataDictionary.dd
-81810>>>>>>>
-81810>>>>>>>CD_Popup_Object Ugyfel_sl is a dbModalPanel
-81828>>>>>>>>
-81828>>>>>>>    Set Location to 5 5
-81829>>>>>>>    Set Size to 134 610
-81830>>>>>>>    Set Label To "Ugyfel Lookup List"
-81831>>>>>>>    Set Border_Style to Border_Thick
-81832>>>>>>>    Set Minimize_Icon to False
-81833>>>>>>>
-81833>>>>>>>
-81833>>>>>>>    Object oUgyfel_DD is a cUgyfelDataDictionary
-81835>>>>>>>    End_Object 
-81836>>>>>>>
-81836>>>>>>>    Set Main_DD To oUgyfel_DD
-81837>>>>>>>    Set Server  To oUgyfel_DD
+81812>>>>>>>// Ugyfel.sl
+81812>>>>>>>// Ugyfel Lookup List
+81812>>>>>>>
+81812>>>>>>>Use DFClient.pkg
+81812>>>>>>>Use cDbCJGridPromptList.pkg
+81812>>>>>>>Use cDbCJGridColumn.pkg
+81812>>>>>>>Use Windows.pkg
+81812>>>>>>>
+81812>>>>>>>Use cUgyfelDataDictionary.dd
+81812>>>>>>>
+81812>>>>>>>CD_Popup_Object Ugyfel_sl is a dbModalPanel
+81830>>>>>>>>
+81830>>>>>>>    Set Location to 5 5
+81831>>>>>>>    Set Size to 134 610
+81832>>>>>>>    Set Label To "Ugyfel Lookup List"
+81833>>>>>>>    Set Border_Style to Border_Thick
+81834>>>>>>>    Set Minimize_Icon to False
+81835>>>>>>>
+81835>>>>>>>
+81835>>>>>>>    Object oUgyfel_DD is a cUgyfelDataDictionary
+81837>>>>>>>    End_Object 
 81838>>>>>>>
-81838>>>>>>>
-81838>>>>>>>
-81838>>>>>>>    Object oSelList is a cDbCJGridPromptList
-81840>>>>>>>        Set Size to 105 600
-81841>>>>>>>        Set Location to 5 5
-81842>>>>>>>        Set peAnchors to anAll
-81843>>>>>>>        Set psLayoutSection to "Ugyfel_sl_oSelList"
-81844>>>>>>>        Set Ordering to 1
-81845>>>>>>>        Set pbAutoServer to True
-81846>>>>>>>
-81846>>>>>>>        Object oUgyfel_Id is a cDbCJGridColumn
-81848>>>>>>>            Entry_Item Ugyfel.Id
-81849>>>>>>>            Set piWidth to 77
-81850>>>>>>>            Set psCaption to "šgyf. azon."
-81851>>>>>>>        End_Object 
-81852>>>>>>>
-81852>>>>>>>        Object oUgyfel_Nev is a cDbCJGridColumn
-81854>>>>>>>            Entry_Item Ugyfel.Nev
-81855>>>>>>>            Set piWidth to 262
-81856>>>>>>>            Set psCaption to "N‚v"
-81857>>>>>>>        End_Object 
-81858>>>>>>>
-81858>>>>>>>        Object oUgyfel_Adoszam is a cDbCJGridColumn
-81860>>>>>>>            Entry_Item Ugyfel.Adoszam
-81861>>>>>>>            Set piWidth to 136
-81862>>>>>>>            Set psCaption to "A.sz."
-81863>>>>>>>        End_Object 
-81864>>>>>>>
-81864>>>>>>>        Object oUgyfel_Cim is a cDbCJGridColumn
-81866>>>>>>>            Entry_Item Ugyfel.Cim
-81867>>>>>>>            Set piWidth to 262
-81868>>>>>>>            Set psCaption to "C¡m"
-81869>>>>>>>        End_Object 
-81870>>>>>>>
-81870>>>>>>>        Object oUgyfel_Telefon is a cDbCJGridColumn
-81872>>>>>>>            Entry_Item Ugyfel.Telefon
-81873>>>>>>>            Set piWidth to 126
-81874>>>>>>>            Set psCaption to "tel."
-81875>>>>>>>        End_Object 
-81876>>>>>>>
-81876>>>>>>>        Object oUgyfel_Bankszamla is a cDbCJGridColumn
-81878>>>>>>>            Entry_Item Ugyfel.Bankszamla
-81879>>>>>>>            Set piWidth to 262
-81880>>>>>>>            Set psCaption to "Bszla."
-81881>>>>>>>        End_Object 
-81882>>>>>>>
-81882>>>>>>>
-81882>>>>>>>    End_Object 
-81883>>>>>>>
-81883>>>>>>>    Object oOk_bn is a Button
-81885>>>>>>>        Set Label to "&Ok"
-81886>>>>>>>        Set Location to 115 447
-81887>>>>>>>        Set peAnchors to anBottomRight
-81888>>>>>>>
-81888>>>>>>>        Procedure OnClick
-81891>>>>>>>            Send OK of oSelList
-81892>>>>>>>        End_Procedure
-81893>>>>>>>
-81893>>>>>>>    End_Object 
-81894>>>>>>>
-81894>>>>>>>    Object oCancel_bn is a Button
-81896>>>>>>>        Set Label to "&Cancel"
-81897>>>>>>>        Set Location to 115 501
-81898>>>>>>>        Set peAnchors to anBottomRight
-81899>>>>>>>
-81899>>>>>>>        Procedure OnClick
-81902>>>>>>>            Send Cancel of oSelList
-81903>>>>>>>        End_Procedure
-81904>>>>>>>
-81904>>>>>>>    End_Object 
-81905>>>>>>>
-81905>>>>>>>    Object oSearch_bn is a Button
-81907>>>>>>>        Set Label to "&Search..."
-81908>>>>>>>        Set Location to 115 555
-81909>>>>>>>        Set peAnchors to anBottomRight
-81910>>>>>>>
-81910>>>>>>>        Procedure OnClick
-81913>>>>>>>            Send Search of oSelList
-81914>>>>>>>        End_Procedure
-81915>>>>>>>
-81915>>>>>>>    End_Object 
-81916>>>>>>>
-81916>>>>>>>    On_Key Key_Alt+Key_O Send KeyAction of oOk_bn
-81917>>>>>>>    On_Key Key_Alt+Key_C Send KeyAction of oCancel_bn
-81918>>>>>>>    On_Key Key_Alt+Key_S Send KeyAction of oSearch_bn
-81919>>>>>>>
-81919>>>>>>>
-81919>>>>>>>CD_End_Object // Ugyfel_sl
-81921>>>>>>>>
-81921>>>
-81921>>>ACTIVATE_VIEW Activate_oUgyfel FOR oUgyfel
-81931>>>>
-81931>>>Object oUgyfel is a dbView
-81933>>>    Set Location to 5 5
-81934>>>    Set Size to 83 350
-81935>>>    Set Label To "Ugyfel"
-81936>>>    Set Border_Style to Border_Thick
-81937>>>
-81937>>>
-81937>>>    Object oUgyfel_DD is a cUgyfelDataDictionary
-81939>>>    End_Object 
-81940>>>
-81940>>>    Set Main_DD To oUgyfel_DD
-81941>>>    Set Server  To oUgyfel_DD
+81838>>>>>>>    Set Main_DD To oUgyfel_DD
+81839>>>>>>>    Set Server  To oUgyfel_DD
+81840>>>>>>>
+81840>>>>>>>
+81840>>>>>>>
+81840>>>>>>>    Object oSelList is a cDbCJGridPromptList
+81842>>>>>>>        Set Size to 105 600
+81843>>>>>>>        Set Location to 5 5
+81844>>>>>>>        Set peAnchors to anAll
+81845>>>>>>>        Set psLayoutSection to "Ugyfel_sl_oSelList"
+81846>>>>>>>        Set Ordering to 1
+81847>>>>>>>        Set pbAutoServer to True
+81848>>>>>>>
+81848>>>>>>>        Object oUgyfel_Id is a cDbCJGridColumn
+81850>>>>>>>            Entry_Item Ugyfel.Id
+81851>>>>>>>            Set piWidth to 77
+81852>>>>>>>            Set psCaption to "šgyf. azon."
+81853>>>>>>>        End_Object 
+81854>>>>>>>
+81854>>>>>>>        Object oUgyfel_Nev is a cDbCJGridColumn
+81856>>>>>>>            Entry_Item Ugyfel.Nev
+81857>>>>>>>            Set piWidth to 262
+81858>>>>>>>            Set psCaption to "N‚v"
+81859>>>>>>>        End_Object 
+81860>>>>>>>
+81860>>>>>>>        Object oUgyfel_Adoszam is a cDbCJGridColumn
+81862>>>>>>>            Entry_Item Ugyfel.Adoszam
+81863>>>>>>>            Set piWidth to 136
+81864>>>>>>>            Set psCaption to "A.sz."
+81865>>>>>>>        End_Object 
+81866>>>>>>>
+81866>>>>>>>        Object oUgyfel_Cim is a cDbCJGridColumn
+81868>>>>>>>            Entry_Item Ugyfel.Cim
+81869>>>>>>>            Set piWidth to 262
+81870>>>>>>>            Set psCaption to "C¡m"
+81871>>>>>>>        End_Object 
+81872>>>>>>>
+81872>>>>>>>        Object oUgyfel_Telefon is a cDbCJGridColumn
+81874>>>>>>>            Entry_Item Ugyfel.Telefon
+81875>>>>>>>            Set piWidth to 126
+81876>>>>>>>            Set psCaption to "tel."
+81877>>>>>>>        End_Object 
+81878>>>>>>>
+81878>>>>>>>        Object oUgyfel_Bankszamla is a cDbCJGridColumn
+81880>>>>>>>            Entry_Item Ugyfel.Bankszamla
+81881>>>>>>>            Set piWidth to 262
+81882>>>>>>>            Set psCaption to "Bszla."
+81883>>>>>>>        End_Object 
+81884>>>>>>>
+81884>>>>>>>
+81884>>>>>>>    End_Object 
+81885>>>>>>>
+81885>>>>>>>    Object oOk_bn is a Button
+81887>>>>>>>        Set Label to "&Ok"
+81888>>>>>>>        Set Location to 115 447
+81889>>>>>>>        Set peAnchors to anBottomRight
+81890>>>>>>>
+81890>>>>>>>        Procedure OnClick
+81893>>>>>>>            Send OK of oSelList
+81894>>>>>>>        End_Procedure
+81895>>>>>>>
+81895>>>>>>>    End_Object 
+81896>>>>>>>
+81896>>>>>>>    Object oCancel_bn is a Button
+81898>>>>>>>        Set Label to "&Cancel"
+81899>>>>>>>        Set Location to 115 501
+81900>>>>>>>        Set peAnchors to anBottomRight
+81901>>>>>>>
+81901>>>>>>>        Procedure OnClick
+81904>>>>>>>            Send Cancel of oSelList
+81905>>>>>>>        End_Procedure
+81906>>>>>>>
+81906>>>>>>>    End_Object 
+81907>>>>>>>
+81907>>>>>>>    Object oSearch_bn is a Button
+81909>>>>>>>        Set Label to "&Search..."
+81910>>>>>>>        Set Location to 115 555
+81911>>>>>>>        Set peAnchors to anBottomRight
+81912>>>>>>>
+81912>>>>>>>        Procedure OnClick
+81915>>>>>>>            Send Search of oSelList
+81916>>>>>>>        End_Procedure
+81917>>>>>>>
+81917>>>>>>>    End_Object 
+81918>>>>>>>
+81918>>>>>>>    On_Key Key_Alt+Key_O Send KeyAction of oOk_bn
+81919>>>>>>>    On_Key Key_Alt+Key_C Send KeyAction of oCancel_bn
+81920>>>>>>>    On_Key Key_Alt+Key_S Send KeyAction of oSearch_bn
+81921>>>>>>>
+81921>>>>>>>
+81921>>>>>>>CD_End_Object // Ugyfel_sl
+81923>>>>>>>>
+81923>>>
+81923>>>ACTIVATE_VIEW Activate_oUgyfel FOR oUgyfel
+81933>>>>
+81933>>>Object oUgyfel is a dbView
+81935>>>    Set Location to 5 5
+81936>>>    Set Size to 83 350
+81937>>>    Set Label To "Ugyfel"
+81938>>>    Set Border_Style to Border_Thick
+81939>>>
+81939>>>
+81939>>>    Object oUgyfel_DD is a cUgyfelDataDictionary
+81941>>>    End_Object 
 81942>>>
-81942>>>
-81942>>>
-81942>>>    Object oUgyfelId is a dbForm
-81944>>>        Entry_Item Ugyfel.Id
-81945>>>        Set Size to 13 42
-81946>>>        Set Location to 5 57
-81947>>>        Set peAnchors to anTopLeftRight
-81948>>>        Set Label to "šgyf‚l azonos¡t¢"
-81949>>>        Set Label_Justification_mode to jMode_Left
-81950>>>        Set Label_Col_Offset to 52
-81951>>>        Set Label_row_Offset to 0
-81952>>>    End_Object 
-81953>>>
-81953>>>    Object oUgyfelNev is a dbForm
-81955>>>        Entry_Item Ugyfel.Nev
-81956>>>        Set Size to 13 250
-81957>>>        Set Location to 20 57
-81958>>>        Set peAnchors to anTopLeftRight
-81959>>>        Set Label to "N‚v"
-81960>>>        Set Label_Justification_mode to jMode_Left
-81961>>>        Set Label_Col_Offset to 52
-81962>>>        Set Label_row_Offset to 0
-81963>>>    End_Object 
-81964>>>
-81964>>>    Object oUgyfelAdoszam is a dbForm
-81966>>>        Entry_Item Ugyfel.Adoszam
-81967>>>        Set Size to 13 84
-81968>>>        Set Location to 35 57
-81969>>>        Set peAnchors to anTopLeftRight
-81970>>>        Set Label to "Ad¢sz m"
-81971>>>        Set Label_Justification_mode to jMode_Left
-81972>>>        Set Label_Col_Offset to 52
-81973>>>        Set Label_row_Offset to 0
-81974>>>    End_Object 
-81975>>>
-81975>>>    Object oUgyfelCim is a dbForm
-81977>>>        Entry_Item Ugyfel.Cim
-81978>>>        Set Size to 13 250
-81979>>>        Set Location to 50 57
-81980>>>        Set peAnchors to anTopLeftRight
-81981>>>        Set Label to "C¡m"
-81982>>>        Set Label_Justification_mode to jMode_Left
-81983>>>        Set Label_Col_Offset to 52
-81984>>>        Set Label_row_Offset to 0
-81985>>>    End_Object 
-81986>>>
-81986>>>    Object oUgyfelTelefon is a dbForm
-81988>>>        Entry_Item Ugyfel.Telefon
-81989>>>        Set Size to 13 78
-81990>>>        Set Location to 65 57
-81991>>>        Set peAnchors to anTopLeftRight
-81992>>>        Set Label to "Telefon"
-81993>>>        Set Label_Justification_mode to jMode_Left
-81994>>>        Set Label_Col_Offset to 52
-81995>>>        Set Label_row_Offset to 0
-81996>>>    End_Object 
-81997>>>
-81997>>>    Object oUgyfelBankszamla is a dbForm
-81999>>>        Entry_Item Ugyfel.Bankszamla
-82000>>>        Set Size to 13 168
-82001>>>        Set Location to 65 177
-82002>>>        Set peAnchors to anTopRight
-82003>>>        Set Label to "Banksz mla"
-82004>>>        Set Label_Justification_mode to jMode_Left
-82005>>>        Set Label_Col_Offset to 37
-82006>>>        Set Label_row_Offset to 0
-82007>>>    End_Object 
-82008>>>
-82008>>>
-82008>>>End_Object 
-82009>        Use Munkalap.vw
+81942>>>    Set Main_DD To oUgyfel_DD
+81943>>>    Set Server  To oUgyfel_DD
+81944>>>
+81944>>>
+81944>>>
+81944>>>    Object oUgyfelId is a dbForm
+81946>>>        Entry_Item Ugyfel.Id
+81947>>>        Set Size to 13 42
+81948>>>        Set Location to 5 57
+81949>>>        Set peAnchors to anTopLeftRight
+81950>>>        Set Label to "šgyf‚l azonos¡t¢"
+81951>>>        Set Label_Justification_mode to jMode_Left
+81952>>>        Set Label_Col_Offset to 52
+81953>>>        Set Label_row_Offset to 0
+81954>>>    End_Object 
+81955>>>
+81955>>>    Object oUgyfelNev is a dbForm
+81957>>>        Entry_Item Ugyfel.Nev
+81958>>>        Set Size to 13 250
+81959>>>        Set Location to 20 57
+81960>>>        Set peAnchors to anTopLeftRight
+81961>>>        Set Label to "N‚v"
+81962>>>        Set Label_Justification_mode to jMode_Left
+81963>>>        Set Label_Col_Offset to 52
+81964>>>        Set Label_row_Offset to 0
+81965>>>    End_Object 
+81966>>>
+81966>>>    Object oUgyfelAdoszam is a dbForm
+81968>>>        Entry_Item Ugyfel.Adoszam
+81969>>>        Set Size to 13 84
+81970>>>        Set Location to 35 57
+81971>>>        Set peAnchors to anTopLeftRight
+81972>>>        Set Label to "Ad¢sz m"
+81973>>>        Set Label_Justification_mode to jMode_Left
+81974>>>        Set Label_Col_Offset to 52
+81975>>>        Set Label_row_Offset to 0
+81976>>>    End_Object 
+81977>>>
+81977>>>    Object oUgyfelCim is a dbForm
+81979>>>        Entry_Item Ugyfel.Cim
+81980>>>        Set Size to 13 250
+81981>>>        Set Location to 50 57
+81982>>>        Set peAnchors to anTopLeftRight
+81983>>>        Set Label to "C¡m"
+81984>>>        Set Label_Justification_mode to jMode_Left
+81985>>>        Set Label_Col_Offset to 52
+81986>>>        Set Label_row_Offset to 0
+81987>>>    End_Object 
+81988>>>
+81988>>>    Object oUgyfelTelefon is a dbForm
+81990>>>        Entry_Item Ugyfel.Telefon
+81991>>>        Set Size to 13 78
+81992>>>        Set Location to 65 57
+81993>>>        Set peAnchors to anTopLeftRight
+81994>>>        Set Label to "Telefon"
+81995>>>        Set Label_Justification_mode to jMode_Left
+81996>>>        Set Label_Col_Offset to 52
+81997>>>        Set Label_row_Offset to 0
+81998>>>    End_Object 
+81999>>>
+81999>>>    Object oUgyfelBankszamla is a dbForm
+82001>>>        Entry_Item Ugyfel.Bankszamla
+82002>>>        Set Size to 13 168
+82003>>>        Set Location to 65 177
+82004>>>        Set peAnchors to anTopRight
+82005>>>        Set Label to "Banksz mla"
+82006>>>        Set Label_Justification_mode to jMode_Left
+82007>>>        Set Label_Col_Offset to 37
+82008>>>        Set Label_row_Offset to 0
+82009>>>    End_Object 
+82010>>>
+82010>>>
+82010>>>End_Object 
+82011>        Use Munkalap.vw
 Including file: Munkalap.vw    (C:\Repos\DataFlexBeadando\AppSrc\Munkalap.vw)
-82009>>>// C:\Repos\DataFlexBeadando\AppSrc\Munkalap.vw
-82009>>>// Munkalap
-82009>>>//
-82009>>>
-82009>>>Use DFClient.pkg
-82009>>>Use DFEntry.pkg
-82009>>>Use cDbCJGrid.pkg
-82009>>>Use cDbCJGridColumn.pkg
-82009>>>
-82009>>>Use cUgyfelDataDictionary.dd
-82009>>>Use cAutoDataDictionary.dd
-82009>>>Use cMunkalapDataDictionary.dd
+82011>>>// C:\Repos\DataFlexBeadando\AppSrc\Munkalap.vw
+82011>>>// Munkalap
+82011>>>//
+82011>>>
+82011>>>Use DFClient.pkg
+82011>>>Use DFEntry.pkg
+82011>>>Use cDbCJGrid.pkg
+82011>>>Use cDbCJGridColumn.pkg
+82011>>>
+82011>>>Use cUgyfelDataDictionary.dd
+82011>>>Use cAutoDataDictionary.dd
+82011>>>Use cMunkalapDataDictionary.dd
 Including file: cMunkalapDataDictionary.dd    (C:\Repos\DataFlexBeadando\DDSrc\cMunkalapDataDictionary.dd)
-82009>>>>>Use DataDict.pkg
-82009>>>>>
-82009>>>>>Open Munkalap
-82011>>>>>Open Auto
-82013>>>>>Open Ugyfel
-82015>>>>>Open MunkaMunkalap
-82017>>>>>
-82017>>>>>Register_Object Munkalap_sl
-82017>>>>>
-82017>>>>>Class cMunkalapDataDictionary is a DataDictionary
-82018>>>>>    
-82018>>>>>    Procedure Construct_Object
-82020>>>>>        Forward Send Construct_Object
-82022>>>>>        Set Main_File to Munkalap.File_Number
-82023>>>>>
-82023>>>>>        Set Add_Client_File to MunkaMunkalap.File_Number
-82024>>>>>
-82024>>>>>        Set Add_Server_File to Auto.File_Number
-82025>>>>>        Set Add_Server_File to Ugyfel.File_Number
+82011>>>>>Use DataDict.pkg
+82011>>>>>
+82011>>>>>Open Munkalap
+82013>>>>>Open Auto
+82015>>>>>Open Ugyfel
+82017>>>>>Open MunkaMunkalap
+82019>>>>>
+82019>>>>>Register_Object Munkalap_sl
+82019>>>>>
+82019>>>>>Class cMunkalapDataDictionary is a DataDictionary
+82020>>>>>    
+82020>>>>>    Procedure Construct_Object
+82022>>>>>        Forward Send Construct_Object
+82024>>>>>        Set Main_File to Munkalap.File_Number
+82025>>>>>
+82025>>>>>        Set Add_Client_File to MunkaMunkalap.File_Number
 82026>>>>>
-82026>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
-82027>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
-82028>>>>>        Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
-82029>>>>>        Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
-82030>>>>>
-82030>>>>>        Set Field_Label_Long Field Munkalap.Id to "Munkalap azonos¡t¢"
-82031>>>>>        Set Field_Label_Short Field Munkalap.Id to "Munkalap azon."
-82032>>>>>        Set Key_Field_State Field Munkalap.Id to True
-82033>>>>>        Set Field_Prompt_Object Field Munkalap.Id to Munkalap_sl
-82034>>>>>
-82034>>>>>        Set Field_Label_Long Field Munkalap.Rogzites to "R”gz¡t‚s"
-82035>>>>>        Set Field_Label_Short Field Munkalap.Rogzites to "R”gz."
+82026>>>>>        Set Add_Server_File to Auto.File_Number
+82027>>>>>        Set Add_Server_File to Ugyfel.File_Number
+82028>>>>>
+82028>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
+82029>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
+82030>>>>>        Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
+82031>>>>>        Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
+82032>>>>>
+82032>>>>>        Set Field_Label_Long Field Munkalap.Id to "Munkalap azonos¡t¢"
+82033>>>>>        Set Field_Label_Short Field Munkalap.Id to "Munkalap azon."
+82034>>>>>        Set Key_Field_State Field Munkalap.Id to True
+82035>>>>>        Set Field_Prompt_Object Field Munkalap.Id to Munkalap_sl
 82036>>>>>
-82036>>>>>        Set Field_Prompt_Object Field Munkalap.UgyfelId to Munkalap_sl
-82037>>>>>
-82037>>>>>        Set Field_Prompt_Object Field Munkalap.AutoId to Munkalap_sl
+82036>>>>>        Set Field_Label_Long Field Munkalap.Rogzites to "R”gz¡t‚s"
+82037>>>>>        Set Field_Label_Short Field Munkalap.Rogzites to "R”gz."
 82038>>>>>
-82038>>>>>        Set Field_Label_Long Field Munkalap.Behozatal to "Behozatal"
-82039>>>>>        Set Field_Label_Short Field Munkalap.Behozatal to "Behoz."
+82038>>>>>        Set Field_Prompt_Object Field Munkalap.UgyfelId to Munkalap_sl
+82039>>>>>
+82039>>>>>        Set Field_Prompt_Object Field Munkalap.AutoId to Munkalap_sl
 82040>>>>>
-82040>>>>>        Set Field_Label_Long Field Munkalap.Elvitel to "Elvitel"
-82041>>>>>        Set Field_Label_Short Field Munkalap.Elvitel to "Elvitel"
+82040>>>>>        Set Field_Label_Long Field Munkalap.Behozatal to "Behozatal"
+82041>>>>>        Set Field_Label_Short Field Munkalap.Behozatal to "Behoz."
 82042>>>>>
-82042>>>>>        Set Field_Label_Long Field Munkalap.Akm to "Kil¢m‚ter el‹tte"
-82043>>>>>        Set Field_Label_Short Field Munkalap.Akm to "Km el‹tte"
+82042>>>>>        Set Field_Label_Long Field Munkalap.Elvitel to "Elvitel"
+82043>>>>>        Set Field_Label_Short Field Munkalap.Elvitel to "Elvitel"
 82044>>>>>
-82044>>>>>        Set Field_Label_Long Field Munkalap.Bkm to "Kil¢m‚ter ll s ut ns"
-82045>>>>>        Set Field_Label_Short Field Munkalap.Bkm to "Km ut na"
+82044>>>>>        Set Field_Label_Long Field Munkalap.Akm to "Kil¢m‚ter el‹tte"
+82045>>>>>        Set Field_Label_Short Field Munkalap.Akm to "Km el‹tte"
 82046>>>>>
-82046>>>>>    End_Procedure
-82047>>>>>
-82047>>>>>End_Class
+82046>>>>>        Set Field_Label_Long Field Munkalap.Bkm to "Kil¢m‚ter ll s ut ns"
+82047>>>>>        Set Field_Label_Short Field Munkalap.Bkm to "Km ut na"
 82048>>>>>
-82048>>>>>Use Munkalap.sl
+82048>>>>>    End_Procedure
+82049>>>>>
+82049>>>>>End_Class
+82050>>>>>
+82050>>>>>Use Munkalap.sl
 Including file: Munkalap.sl    (C:\Repos\DataFlexBeadando\AppSrc\Munkalap.sl)
-82048>>>>>>>// Munkalap.sl
-82048>>>>>>>// Munkalap Lookup List
-82048>>>>>>>
-82048>>>>>>>Use DFClient.pkg
-82048>>>>>>>Use cDbCJGridPromptList.pkg
-82048>>>>>>>Use cDbCJGridColumn.pkg
-82048>>>>>>>Use Windows.pkg
-82048>>>>>>>
-82048>>>>>>>Use cMunkalapDataDictionary.dd
-82048>>>>>>>
-82048>>>>>>>CD_Popup_Object Munkalap_sl is a dbModalPanel
-82066>>>>>>>>
-82066>>>>>>>    Set Location to 5 5
-82067>>>>>>>    Set Size to 134 450
-82068>>>>>>>    Set Label To "Munkalap Lookup List"
-82069>>>>>>>    Set Border_Style to Border_Thick
-82070>>>>>>>    Set Minimize_Icon to False
-82071>>>>>>>
-82071>>>>>>>
-82071>>>>>>>    Object oMunkalap_DD is a cMunkalapDataDictionary
-82073>>>>>>>    End_Object 
-82074>>>>>>>
-82074>>>>>>>    Set Main_DD To oMunkalap_DD
-82075>>>>>>>    Set Server  To oMunkalap_DD
+82050>>>>>>>// Munkalap.sl
+82050>>>>>>>// Munkalap Lookup List
+82050>>>>>>>
+82050>>>>>>>Use DFClient.pkg
+82050>>>>>>>Use cDbCJGridPromptList.pkg
+82050>>>>>>>Use cDbCJGridColumn.pkg
+82050>>>>>>>Use Windows.pkg
+82050>>>>>>>
+82050>>>>>>>Use cMunkalapDataDictionary.dd
+82050>>>>>>>
+82050>>>>>>>CD_Popup_Object Munkalap_sl is a dbModalPanel
+82068>>>>>>>>
+82068>>>>>>>    Set Location to 5 5
+82069>>>>>>>    Set Size to 134 450
+82070>>>>>>>    Set Label To "Munkalap Lookup List"
+82071>>>>>>>    Set Border_Style to Border_Thick
+82072>>>>>>>    Set Minimize_Icon to False
+82073>>>>>>>
+82073>>>>>>>
+82073>>>>>>>    Object oMunkalap_DD is a cMunkalapDataDictionary
+82075>>>>>>>    End_Object 
 82076>>>>>>>
-82076>>>>>>>
-82076>>>>>>>
-82076>>>>>>>    Object oSelList is a cDbCJGridPromptList
-82078>>>>>>>        Set Size to 105 440
-82079>>>>>>>        Set Location to 5 5
-82080>>>>>>>        Set peAnchors to anAll
-82081>>>>>>>        Set psLayoutSection to "Munkalap_sl_oSelList"
-82082>>>>>>>        Set Ordering to 1
-82083>>>>>>>        Set pbAutoServer to True
-82084>>>>>>>
-82084>>>>>>>        Object oMunkalap_Id is a cDbCJGridColumn
-82086>>>>>>>            Entry_Item Munkalap.Id
-82087>>>>>>>            Set piWidth to 101
-82088>>>>>>>            Set psCaption to "Munkalap azon."
-82089>>>>>>>        End_Object 
-82090>>>>>>>
-82090>>>>>>>        Object oMunkalap_Rogzites is a cDbCJGridColumn
-82092>>>>>>>            Entry_Item Munkalap.Rogzites
-82093>>>>>>>            Set piWidth to 105
-82094>>>>>>>            Set psCaption to "R”gz."
-82095>>>>>>>        End_Object 
-82096>>>>>>>
-82096>>>>>>>        Object oMunkalap_UgyfelId is a cDbCJGridColumn
-82098>>>>>>>            Entry_Item Munkalap.UgyfelId
-82099>>>>>>>            Set piWidth to 63
-82100>>>>>>>            Set psCaption to "UgyfelId"
-82101>>>>>>>        End_Object 
-82102>>>>>>>
-82102>>>>>>>        Object oMunkalap_AutoId is a cDbCJGridColumn
-82104>>>>>>>            Entry_Item Munkalap.AutoId
-82105>>>>>>>            Set piWidth to 63
-82106>>>>>>>            Set psCaption to "AutoId"
-82107>>>>>>>        End_Object 
-82108>>>>>>>
-82108>>>>>>>        Object oMunkalap_Behozatal is a cDbCJGridColumn
-82110>>>>>>>            Entry_Item Munkalap.Behozatal
-82111>>>>>>>            Set piWidth to 105
-82112>>>>>>>            Set psCaption to "Behoz."
-82113>>>>>>>        End_Object 
-82114>>>>>>>
-82114>>>>>>>        Object oMunkalap_Elvitel is a cDbCJGridColumn
-82116>>>>>>>            Entry_Item Munkalap.Elvitel
-82117>>>>>>>            Set piWidth to 105
-82118>>>>>>>            Set psCaption to "Elvitel"
-82119>>>>>>>        End_Object 
-82120>>>>>>>
-82120>>>>>>>        Object oMunkalap_Akm is a cDbCJGridColumn
-82122>>>>>>>            Entry_Item Munkalap.Akm
-82123>>>>>>>            Set piWidth to 105
-82124>>>>>>>            Set psCaption to "Km el‹tte"
-82125>>>>>>>        End_Object 
-82126>>>>>>>
-82126>>>>>>>        Object oMunkalap_Bkm is a cDbCJGridColumn
-82128>>>>>>>            Entry_Item Munkalap.Bkm
-82129>>>>>>>            Set piWidth to 105
-82130>>>>>>>            Set psCaption to "Km ut na"
-82131>>>>>>>        End_Object 
-82132>>>>>>>
-82132>>>>>>>
-82132>>>>>>>    End_Object 
-82133>>>>>>>
-82133>>>>>>>    Object oOk_bn is a Button
-82135>>>>>>>        Set Label to "&Ok"
-82136>>>>>>>        Set Location to 115 287
-82137>>>>>>>        Set peAnchors to anBottomRight
-82138>>>>>>>
-82138>>>>>>>        Procedure OnClick
-82141>>>>>>>            Send OK of oSelList
-82142>>>>>>>        End_Procedure
-82143>>>>>>>
-82143>>>>>>>    End_Object 
-82144>>>>>>>
-82144>>>>>>>    Object oCancel_bn is a Button
-82146>>>>>>>        Set Label to "&Cancel"
-82147>>>>>>>        Set Location to 115 341
-82148>>>>>>>        Set peAnchors to anBottomRight
-82149>>>>>>>
-82149>>>>>>>        Procedure OnClick
-82152>>>>>>>            Send Cancel of oSelList
-82153>>>>>>>        End_Procedure
-82154>>>>>>>
-82154>>>>>>>    End_Object 
-82155>>>>>>>
-82155>>>>>>>    Object oSearch_bn is a Button
-82157>>>>>>>        Set Label to "&Search..."
-82158>>>>>>>        Set Location to 115 395
-82159>>>>>>>        Set peAnchors to anBottomRight
-82160>>>>>>>
-82160>>>>>>>        Procedure OnClick
-82163>>>>>>>            Send Search of oSelList
-82164>>>>>>>        End_Procedure
-82165>>>>>>>
-82165>>>>>>>    End_Object 
-82166>>>>>>>
-82166>>>>>>>    On_Key Key_Alt+Key_O Send KeyAction of oOk_bn
-82167>>>>>>>    On_Key Key_Alt+Key_C Send KeyAction of oCancel_bn
-82168>>>>>>>    On_Key Key_Alt+Key_S Send KeyAction of oSearch_bn
-82169>>>>>>>
-82169>>>>>>>
-82169>>>>>>>CD_End_Object // Munkalap_sl
-82171>>>>>>>>
-82171>>>Use cMunkaDataDictionary.dd
-82171>>>Use cMunkaMunkalapDataDictionary.dd
+82076>>>>>>>    Set Main_DD To oMunkalap_DD
+82077>>>>>>>    Set Server  To oMunkalap_DD
+82078>>>>>>>
+82078>>>>>>>
+82078>>>>>>>
+82078>>>>>>>    Object oSelList is a cDbCJGridPromptList
+82080>>>>>>>        Set Size to 105 440
+82081>>>>>>>        Set Location to 5 5
+82082>>>>>>>        Set peAnchors to anAll
+82083>>>>>>>        Set psLayoutSection to "Munkalap_sl_oSelList"
+82084>>>>>>>        Set Ordering to 1
+82085>>>>>>>        Set pbAutoServer to True
+82086>>>>>>>
+82086>>>>>>>        Object oMunkalap_Id is a cDbCJGridColumn
+82088>>>>>>>            Entry_Item Munkalap.Id
+82089>>>>>>>            Set piWidth to 101
+82090>>>>>>>            Set psCaption to "Munkalap azon."
+82091>>>>>>>        End_Object 
+82092>>>>>>>
+82092>>>>>>>        Object oMunkalap_Rogzites is a cDbCJGridColumn
+82094>>>>>>>            Entry_Item Munkalap.Rogzites
+82095>>>>>>>            Set piWidth to 105
+82096>>>>>>>            Set psCaption to "R”gz."
+82097>>>>>>>        End_Object 
+82098>>>>>>>
+82098>>>>>>>        Object oMunkalap_UgyfelId is a cDbCJGridColumn
+82100>>>>>>>            Entry_Item Munkalap.UgyfelId
+82101>>>>>>>            Set piWidth to 63
+82102>>>>>>>            Set psCaption to "UgyfelId"
+82103>>>>>>>        End_Object 
+82104>>>>>>>
+82104>>>>>>>        Object oMunkalap_AutoId is a cDbCJGridColumn
+82106>>>>>>>            Entry_Item Munkalap.AutoId
+82107>>>>>>>            Set piWidth to 63
+82108>>>>>>>            Set psCaption to "AutoId"
+82109>>>>>>>        End_Object 
+82110>>>>>>>
+82110>>>>>>>        Object oMunkalap_Behozatal is a cDbCJGridColumn
+82112>>>>>>>            Entry_Item Munkalap.Behozatal
+82113>>>>>>>            Set piWidth to 105
+82114>>>>>>>            Set psCaption to "Behoz."
+82115>>>>>>>        End_Object 
+82116>>>>>>>
+82116>>>>>>>        Object oMunkalap_Elvitel is a cDbCJGridColumn
+82118>>>>>>>            Entry_Item Munkalap.Elvitel
+82119>>>>>>>            Set piWidth to 105
+82120>>>>>>>            Set psCaption to "Elvitel"
+82121>>>>>>>        End_Object 
+82122>>>>>>>
+82122>>>>>>>        Object oMunkalap_Akm is a cDbCJGridColumn
+82124>>>>>>>            Entry_Item Munkalap.Akm
+82125>>>>>>>            Set piWidth to 105
+82126>>>>>>>            Set psCaption to "Km el‹tte"
+82127>>>>>>>        End_Object 
+82128>>>>>>>
+82128>>>>>>>        Object oMunkalap_Bkm is a cDbCJGridColumn
+82130>>>>>>>            Entry_Item Munkalap.Bkm
+82131>>>>>>>            Set piWidth to 105
+82132>>>>>>>            Set psCaption to "Km ut na"
+82133>>>>>>>        End_Object 
+82134>>>>>>>
+82134>>>>>>>
+82134>>>>>>>    End_Object 
+82135>>>>>>>
+82135>>>>>>>    Object oOk_bn is a Button
+82137>>>>>>>        Set Label to "&Ok"
+82138>>>>>>>        Set Location to 115 287
+82139>>>>>>>        Set peAnchors to anBottomRight
+82140>>>>>>>
+82140>>>>>>>        Procedure OnClick
+82143>>>>>>>            Send OK of oSelList
+82144>>>>>>>        End_Procedure
+82145>>>>>>>
+82145>>>>>>>    End_Object 
+82146>>>>>>>
+82146>>>>>>>    Object oCancel_bn is a Button
+82148>>>>>>>        Set Label to "&Cancel"
+82149>>>>>>>        Set Location to 115 341
+82150>>>>>>>        Set peAnchors to anBottomRight
+82151>>>>>>>
+82151>>>>>>>        Procedure OnClick
+82154>>>>>>>            Send Cancel of oSelList
+82155>>>>>>>        End_Procedure
+82156>>>>>>>
+82156>>>>>>>    End_Object 
+82157>>>>>>>
+82157>>>>>>>    Object oSearch_bn is a Button
+82159>>>>>>>        Set Label to "&Search..."
+82160>>>>>>>        Set Location to 115 395
+82161>>>>>>>        Set peAnchors to anBottomRight
+82162>>>>>>>
+82162>>>>>>>        Procedure OnClick
+82165>>>>>>>            Send Search of oSelList
+82166>>>>>>>        End_Procedure
+82167>>>>>>>
+82167>>>>>>>    End_Object 
+82168>>>>>>>
+82168>>>>>>>    On_Key Key_Alt+Key_O Send KeyAction of oOk_bn
+82169>>>>>>>    On_Key Key_Alt+Key_C Send KeyAction of oCancel_bn
+82170>>>>>>>    On_Key Key_Alt+Key_S Send KeyAction of oSearch_bn
+82171>>>>>>>
+82171>>>>>>>
+82171>>>>>>>CD_End_Object // Munkalap_sl
+82173>>>>>>>>
+82173>>>Use cMunkaDataDictionary.dd
+82173>>>Use cMunkaMunkalapDataDictionary.dd
 Including file: cMunkaMunkalapDataDictionary.dd    (C:\Repos\DataFlexBeadando\DDSrc\cMunkaMunkalapDataDictionary.dd)
-82171>>>>>Use DataDict.pkg
-82171>>>>>
-82171>>>>>Open MunkaMunkalap
-82173>>>>>Open Munka
-82175>>>>>Open Munkalap
-82177>>>>>
-82177>>>>>Class cMunkaMunkalapDataDictionary is a DataDictionary
-82178>>>>>    
-82178>>>>>    Procedure Construct_Object
-82180>>>>>        Forward Send Construct_Object
-82182>>>>>        Set Main_File to MunkaMunkalap.File_Number
-82183>>>>>
-82183>>>>>        Set Add_Server_File to Munka.File_Number
-82184>>>>>        Set Add_Server_File to Munkalap.File_Number
+82173>>>>>Use DataDict.pkg
+82173>>>>>
+82173>>>>>Open MunkaMunkalap
+82175>>>>>Open Munka
+82177>>>>>Open Munkalap
+82179>>>>>
+82179>>>>>Class cMunkaMunkalapDataDictionary is a DataDictionary
+82180>>>>>    
+82180>>>>>    Procedure Construct_Object
+82182>>>>>        Forward Send Construct_Object
+82184>>>>>        Set Main_File to MunkaMunkalap.File_Number
 82185>>>>>
-82185>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
-82186>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
-82187>>>>>        Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
-82188>>>>>        Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
-82189>>>>>
-82189>>>>>        Set Key_Field_State Field MunkaMunkalap.MunkaId to True
-82190>>>>>
-82190>>>>>        Set Key_Field_State Field MunkaMunkalap.MunkalapId to True
+82185>>>>>        Set Add_Server_File to Munka.File_Number
+82186>>>>>        Set Add_Server_File to Munkalap.File_Number
+82187>>>>>
+82187>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
+82188>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
+82189>>>>>        Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
+82190>>>>>        Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
 82191>>>>>
-82191>>>>>    End_Procedure
+82191>>>>>        Set Key_Field_State Field MunkaMunkalap.MunkaId to True
 82192>>>>>
-82192>>>>>End_Class
-82193>>>
-82193>>>ACTIVATE_VIEW Activate_oMunkalap FOR oMunkalap
-82203>>>>
-82203>>>Object oMunkalap is a dbView
-82205>>>    Set Location to 5 5
-82206>>>    Set Size to 159 446
-82207>>>    Set Label To "Munkalap"
-82208>>>    Set Border_Style to Border_Thick
-82209>>>
-82209>>>
-82209>>>    Object oUgyfel_DD is a cUgyfelDataDictionary
-82211>>>    End_Object 
-82212>>>
-82212>>>    Object oAuto_DD is a cAutoDataDictionary
-82214>>>    End_Object 
-82215>>>
-82215>>>    Object oMunkalap_DD is a cMunkalapDataDictionary
-82217>>>        Set DDO_Server To oAuto_DD
-82218>>>        Set DDO_Server To oUgyfel_DD
-82219>>>        // this lets you save a new parent DD from within child DD
-82219>>>        Set Allow_Foreign_New_Save_State to True
-82220>>>    End_Object 
-82221>>>
-82221>>>    Object oMunka_DD is a cMunkaDataDictionary
-82223>>>    End_Object 
-82224>>>
-82224>>>    Object oMunkaMunkalap_DD is a cMunkaMunkalapDataDictionary
-82226>>>        Set DDO_Server To oMunka_DD
-82227>>>        Set DDO_Server To oMunkalap_DD
-82228>>>        Set Constrain_File To Munkalap.File_Number
-82229>>>    End_Object 
-82230>>>
-82230>>>    Set Main_DD To oMunkalap_DD
-82231>>>    Set Server  To oMunkalap_DD
+82192>>>>>        Set Key_Field_State Field MunkaMunkalap.MunkalapId to True
+82193>>>>>
+82193>>>>>    End_Procedure
+82194>>>>>
+82194>>>>>End_Class
+82195>>>
+82195>>>ACTIVATE_VIEW Activate_oMunkalap FOR oMunkalap
+82205>>>>
+82205>>>Object oMunkalap is a dbView
+82207>>>    Set Location to 5 5
+82208>>>    Set Size to 159 446
+82209>>>    Set Label To "Munkalap"
+82210>>>    Set Border_Style to Border_Thick
+82211>>>
+82211>>>
+82211>>>    Object oUgyfel_DD is a cUgyfelDataDictionary
+82213>>>    End_Object 
+82214>>>
+82214>>>    Object oAuto_DD is a cAutoDataDictionary
+82216>>>    End_Object 
+82217>>>
+82217>>>    Object oMunkalap_DD is a cMunkalapDataDictionary
+82219>>>        Set DDO_Server To oAuto_DD
+82220>>>        Set DDO_Server To oUgyfel_DD
+82221>>>        // this lets you save a new parent DD from within child DD
+82221>>>        Set Allow_Foreign_New_Save_State to True
+82222>>>    End_Object 
+82223>>>
+82223>>>    Object oMunka_DD is a cMunkaDataDictionary
+82225>>>    End_Object 
+82226>>>
+82226>>>    Object oMunkaMunkalap_DD is a cMunkaMunkalapDataDictionary
+82228>>>        Set DDO_Server To oMunka_DD
+82229>>>        Set DDO_Server To oMunkalap_DD
+82230>>>        Set Constrain_File To Munkalap.File_Number
+82231>>>    End_Object 
 82232>>>
-82232>>>
-82232>>>
-82232>>>    Object oMunkalapId is a dbForm
-82234>>>        Entry_Item Munkalap.Id
-82235>>>        Set Size to 13 42
-82236>>>        Set Location to 5 68
-82237>>>        Set peAnchors to anTopLeftRight
-82238>>>        Set Label to "Munkalap azonos¡t¢"
-82239>>>        Set Label_Justification_mode to jMode_Left
-82240>>>        Set Label_Col_Offset to 63
-82241>>>        Set Label_row_Offset to 0
-82242>>>    End_Object 
-82243>>>
-82243>>>    Object oUgyfelId is a dbForm
-82245>>>        Entry_Item Ugyfel.Id
-82246>>>        Set Size to 13 42
-82247>>>        Set Location to 20 68
-82248>>>        Set peAnchors to anTopLeftRight
-82249>>>        Set Label to "šgyf‚l azonos¡t¢"
-82250>>>        Set Label_Justification_mode to jMode_Left
-82251>>>        Set Label_Col_Offset to 63
-82252>>>        Set Label_row_Offset to 0
-82253>>>    End_Object 
-82254>>>
-82254>>>    Object oUgyfelNev is a dbForm
-82256>>>        Entry_Item Ugyfel.Nev
-82257>>>        Set Size to 13 250
-82258>>>        Set Location to 20 129
-82259>>>        Set peAnchors to anTopRight
-82260>>>        Set Label to "N‚v"
-82261>>>        Set Label_Justification_mode to jMode_Left
-82262>>>        Set Label_Col_Offset to 14
-82263>>>        Set Label_row_Offset to 0
-82264>>>    End_Object 
-82265>>>
-82265>>>    Object oAutoId is a dbForm
-82267>>>        Entry_Item Auto.Id
-82268>>>        Set Size to 13 42
-82269>>>        Set Location to 35 68
-82270>>>        Set peAnchors to anTopLeftRight
-82271>>>        Set Label to "Azonos¡t¢"
-82272>>>        Set Label_Justification_mode to jMode_Left
-82273>>>        Set Label_Col_Offset to 63
-82274>>>        Set Label_row_Offset to 0
-82275>>>    End_Object 
-82276>>>
-82276>>>    Object oAutoAlvazszam is a dbForm
-82278>>>        Entry_Item Auto.Alvazszam
-82279>>>        Set Size to 13 126
-82280>>>        Set Location to 35 148
-82281>>>        Set peAnchors to anTopRight
-82282>>>        Set Label to "Alv zsz m"
-82283>>>        Set Label_Justification_mode to jMode_Left
-82284>>>        Set Label_Col_Offset to 33
-82285>>>        Set Label_row_Offset to 0
-82286>>>    End_Object 
-82287>>>
-82287>>>    Object oAutoMotorszam is a dbForm
-82289>>>        Entry_Item Auto.Motorszam
-82290>>>        Set Size to 13 126
-82291>>>        Set Location to 35 315
-82292>>>        Set peAnchors to anTopRight
-82293>>>        Set Label to "Motorsz m"
-82294>>>        Set Label_Justification_mode to jMode_Left
-82295>>>        Set Label_Col_Offset to 36
-82296>>>        Set Label_row_Offset to 0
-82297>>>    End_Object 
-82298>>>
-82298>>>    Object oMunkalapRogzites is a dbForm
-82300>>>        Entry_Item Munkalap.Rogzites
-82301>>>        Set Size to 13 66
-82302>>>        Set Location to 50 68
-82303>>>        Set peAnchors to anTopLeftRight
-82304>>>        Set Label to "R”gz¡t‚s"
-82305>>>        Set Label_Justification_mode to jMode_Left
-82306>>>        Set Label_Col_Offset to 63
-82307>>>        Set Label_row_Offset to 0
-82308>>>    End_Object 
-82309>>>
-82309>>>    Object oMunkalapBehozatal is a dbForm
-82311>>>        Entry_Item Munkalap.Behozatal
-82312>>>        Set Size to 13 66
-82313>>>        Set Location to 50 170
-82314>>>        Set peAnchors to anTopRight
-82315>>>        Set Label to "Behozatal"
-82316>>>        Set Label_Justification_mode to jMode_Left
-82317>>>        Set Label_Col_Offset to 31
-82318>>>        Set Label_row_Offset to 0
-82319>>>    End_Object 
-82320>>>
-82320>>>    Object oMunkalapElvitel is a dbForm
-82322>>>        Entry_Item Munkalap.Elvitel
-82323>>>        Set Size to 13 66
-82324>>>        Set Location to 50 261
-82325>>>        Set peAnchors to anTopRight
-82326>>>        Set Label to "Elvitel"
-82327>>>        Set Label_Justification_mode to jMode_Left
-82328>>>        Set Label_Col_Offset to 20
-82329>>>        Set Label_row_Offset to 0
-82330>>>    End_Object 
-82331>>>
-82331>>>    Object oMunkalapAkm is a dbForm
-82333>>>        Entry_Item Munkalap.Akm
-82334>>>        Set Size to 13 66
-82335>>>        Set Location to 65 68
-82336>>>        Set peAnchors to anTopLeftRight
-82337>>>        Set Label to "Kil¢m‚ter el‹tte"
-82338>>>        Set Label_Justification_mode to jMode_Left
-82339>>>        Set Label_Col_Offset to 63
-82340>>>        Set Label_row_Offset to 0
-82341>>>    End_Object 
-82342>>>
-82342>>>    Object oMunkalapBkm is a dbForm
-82344>>>        Entry_Item Munkalap.Bkm
-82345>>>        Set Size to 13 66
-82346>>>        Set Location to 65 202
-82347>>>        Set peAnchors to anTopRight
-82348>>>        Set Label to "Kil¢m‚ter ll s ut ns"
-82349>>>        Set Label_Justification_mode to jMode_Left
-82350>>>        Set Label_Col_Offset to 63
-82351>>>        Set Label_row_Offset to 0
-82352>>>    End_Object 
-82353>>>
-82353>>>    Object oDetailGrid is a cDbCJGrid
-82355>>>        Set Size to 66 359
-82356>>>        Set Location to 88 5
-82357>>>        Set Server to oMunkaMunkalap_DD
-82358>>>        Set Ordering to 3
-82359>>>        Set peAnchors to anAll
-82360>>>        Set psLayoutSection to "oMunkalap_oDetailGrid"
-82361>>>        Set pbAllowInsertRow to False
-82362>>>        Set pbHeaderPrompts to True
-82363>>>
-82363>>>        Object oMunka_Id is a cDbCJGridColumn
-82365>>>            Entry_Item Munka.Id
-82366>>>            Set piWidth to 85
-82367>>>            Set psCaption to "Munka azon."
-82368>>>        End_Object 
-82369>>>
-82369>>>        Object oMunka_Name is a cDbCJGridColumn
-82371>>>            Entry_Item Munka.Name
-82372>>>            Set piWidth to 210
-82373>>>            Set psCaption to "N‚v"
-82374>>>        End_Object 
-82375>>>
-82375>>>        Object oMunka_Leiras is a cDbCJGridColumn
-82377>>>            Entry_Item Munka.Leiras
-82378>>>            Set piWidth to 105
-82379>>>            Set psCaption to "Le¡r s"
-82380>>>        End_Object 
-82381>>>
-82381>>>        Object oMunka_Egysegar is a cDbCJGridColumn
-82383>>>            Entry_Item Munka.Egysegar
-82384>>>            Set piWidth to 105
-82385>>>            Set psCaption to "Egys‚g r"
-82386>>>        End_Object 
-82387>>>
-82387>>>        Object oMunkaMunkalap_Darab is a cDbCJGridColumn
-82389>>>            Entry_Item MunkaMunkalap.Darab
-82390>>>            Set piWidth to 105
-82391>>>            Set psCaption to "Darab"
-82392>>>        End_Object 
-82393>>>
-82393>>>    End_Object 
-82394>>>
-82394>>>    //-----------------------------------------------------------------------
-82394>>>    // Create custom confirmation messages for save and delete
-82394>>>    // We must create the new functions and assign verify messages
-82394>>>    // to them.
-82394>>>    //-----------------------------------------------------------------------
-82394>>>
-82394>>>    Function ConfirmDeleteHeader Returns Boolean
-82397>>>        Boolean bFail
-82397>>>        Get Confirm "Delete Entire Header and all detail?" to bFail
-82398>>>        Function_Return bFail
-82399>>>    End_Function 
-82400>>>
-82400>>>    // Only confirm on the saving of new records
-82400>>>    Function ConfirmSaveHeader Returns Boolean
-82403>>>        Boolean bNoSave bHasRecord
-82403>>>        Handle  hoSrvr
-82403>>>        Get Server to hoSrvr
-82404>>>        Get HasRecord of hoSrvr to bHasRecord
-82405>>>        If not bHasRecord Begin
-82407>>>            Get Confirm "Save this NEW header?" to bNoSave
-82408>>>        End
-82408>>>>
-82408>>>        Function_Return bNoSave
-82409>>>    End_Function 
-82410>>>
-82410>>>    // Define alternate confirmation Messages
-82410>>>    Set Verify_Save_MSG       to (RefFunc(ConfirmSaveHeader))
-82411>>>    Set Verify_Delete_MSG     to (RefFunc(ConfirmDeleteHeader))
-82412>>>    // Saves in header should not clear the view
-82412>>>    Set Auto_Clear_Deo_State to False
-82413>>>
-82413>>>
-82413>>>End_Object 
-82414>
-82414>        Procedure Activate_About
-82417>            Send DoAbout "" "" "" "" ""
-82418>        End_Procedure
-82419>
-82419>    End_Object
-82420>
-82420>End_Object
+82232>>>    Set Main_DD To oMunkalap_DD
+82233>>>    Set Server  To oMunkalap_DD
+82234>>>
+82234>>>
+82234>>>
+82234>>>    Object oMunkalapId is a dbForm
+82236>>>        Entry_Item Munkalap.Id
+82237>>>        Set Size to 13 42
+82238>>>        Set Location to 5 68
+82239>>>        Set peAnchors to anTopLeftRight
+82240>>>        Set Label to "Munkalap azonos¡t¢"
+82241>>>        Set Label_Justification_mode to jMode_Left
+82242>>>        Set Label_Col_Offset to 63
+82243>>>        Set Label_row_Offset to 0
+82244>>>    End_Object 
+82245>>>
+82245>>>    Object oUgyfelId is a dbForm
+82247>>>        Entry_Item Ugyfel.Id
+82248>>>        Set Size to 13 42
+82249>>>        Set Location to 20 68
+82250>>>        Set peAnchors to anTopLeftRight
+82251>>>        Set Label to "šgyf‚l azonos¡t¢"
+82252>>>        Set Label_Justification_mode to jMode_Left
+82253>>>        Set Label_Col_Offset to 63
+82254>>>        Set Label_row_Offset to 0
+82255>>>    End_Object 
+82256>>>
+82256>>>    Object oUgyfelNev is a dbForm
+82258>>>        Entry_Item Ugyfel.Nev
+82259>>>        Set Size to 13 250
+82260>>>        Set Location to 20 129
+82261>>>        Set peAnchors to anTopRight
+82262>>>        Set Label to "N‚v"
+82263>>>        Set Label_Justification_mode to jMode_Left
+82264>>>        Set Label_Col_Offset to 14
+82265>>>        Set Label_row_Offset to 0
+82266>>>    End_Object 
+82267>>>
+82267>>>    Object oAutoId is a dbForm
+82269>>>        Entry_Item Auto.Id
+82270>>>        Set Size to 13 42
+82271>>>        Set Location to 35 68
+82272>>>        Set peAnchors to anTopLeftRight
+82273>>>        Set Label to "Azonos¡t¢"
+82274>>>        Set Label_Justification_mode to jMode_Left
+82275>>>        Set Label_Col_Offset to 63
+82276>>>        Set Label_row_Offset to 0
+82277>>>    End_Object 
+82278>>>
+82278>>>    Object oAutoAlvazszam is a dbForm
+82280>>>        Entry_Item Auto.Alvazszam
+82281>>>        Set Size to 13 126
+82282>>>        Set Location to 35 148
+82283>>>        Set peAnchors to anTopRight
+82284>>>        Set Label to "Alv zsz m"
+82285>>>        Set Label_Justification_mode to jMode_Left
+82286>>>        Set Label_Col_Offset to 33
+82287>>>        Set Label_row_Offset to 0
+82288>>>    End_Object 
+82289>>>
+82289>>>    Object oAutoMotorszam is a dbForm
+82291>>>        Entry_Item Auto.Motorszam
+82292>>>        Set Size to 13 126
+82293>>>        Set Location to 35 315
+82294>>>        Set peAnchors to anTopRight
+82295>>>        Set Label to "Motorsz m"
+82296>>>        Set Label_Justification_mode to jMode_Left
+82297>>>        Set Label_Col_Offset to 36
+82298>>>        Set Label_row_Offset to 0
+82299>>>    End_Object 
+82300>>>
+82300>>>    Object oMunkalapRogzites is a dbForm
+82302>>>        Entry_Item Munkalap.Rogzites
+82303>>>        Set Size to 13 66
+82304>>>        Set Location to 50 68
+82305>>>        Set peAnchors to anTopLeftRight
+82306>>>        Set Label to "R”gz¡t‚s"
+82307>>>        Set Label_Justification_mode to jMode_Left
+82308>>>        Set Label_Col_Offset to 63
+82309>>>        Set Label_row_Offset to 0
+82310>>>    End_Object 
+82311>>>
+82311>>>    Object oMunkalapBehozatal is a dbForm
+82313>>>        Entry_Item Munkalap.Behozatal
+82314>>>        Set Size to 13 66
+82315>>>        Set Location to 50 170
+82316>>>        Set peAnchors to anTopRight
+82317>>>        Set Label to "Behozatal"
+82318>>>        Set Label_Justification_mode to jMode_Left
+82319>>>        Set Label_Col_Offset to 31
+82320>>>        Set Label_row_Offset to 0
+82321>>>    End_Object 
+82322>>>
+82322>>>    Object oMunkalapElvitel is a dbForm
+82324>>>        Entry_Item Munkalap.Elvitel
+82325>>>        Set Size to 13 66
+82326>>>        Set Location to 50 261
+82327>>>        Set peAnchors to anTopRight
+82328>>>        Set Label to "Elvitel"
+82329>>>        Set Label_Justification_mode to jMode_Left
+82330>>>        Set Label_Col_Offset to 20
+82331>>>        Set Label_row_Offset to 0
+82332>>>    End_Object 
+82333>>>
+82333>>>    Object oMunkalapAkm is a dbForm
+82335>>>        Entry_Item Munkalap.Akm
+82336>>>        Set Size to 13 66
+82337>>>        Set Location to 65 68
+82338>>>        Set peAnchors to anTopLeftRight
+82339>>>        Set Label to "Kil¢m‚ter el‹tte"
+82340>>>        Set Label_Justification_mode to jMode_Left
+82341>>>        Set Label_Col_Offset to 63
+82342>>>        Set Label_row_Offset to 0
+82343>>>    End_Object 
+82344>>>
+82344>>>    Object oMunkalapBkm is a dbForm
+82346>>>        Entry_Item Munkalap.Bkm
+82347>>>        Set Size to 13 66
+82348>>>        Set Location to 65 202
+82349>>>        Set peAnchors to anTopRight
+82350>>>        Set Label to "Kil¢m‚ter ll s ut ns"
+82351>>>        Set Label_Justification_mode to jMode_Left
+82352>>>        Set Label_Col_Offset to 63
+82353>>>        Set Label_row_Offset to 0
+82354>>>    End_Object 
+82355>>>
+82355>>>    Object oDetailGrid is a cDbCJGrid
+82357>>>        Set Size to 66 359
+82358>>>        Set Location to 88 5
+82359>>>        Set Server to oMunkaMunkalap_DD
+82360>>>        Set Ordering to 3
+82361>>>        Set peAnchors to anAll
+82362>>>        Set psLayoutSection to "oMunkalap_oDetailGrid"
+82363>>>        Set pbAllowInsertRow to False
+82364>>>        Set pbHeaderPrompts to True
+82365>>>
+82365>>>        Object oMunka_Id is a cDbCJGridColumn
+82367>>>            Entry_Item Munka.Id
+82368>>>            Set piWidth to 85
+82369>>>            Set psCaption to "Munka azon."
+82370>>>        End_Object 
+82371>>>
+82371>>>        Object oMunka_Name is a cDbCJGridColumn
+82373>>>            Entry_Item Munka.Name
+82374>>>            Set piWidth to 210
+82375>>>            Set psCaption to "N‚v"
+82376>>>        End_Object 
+82377>>>
+82377>>>        Object oMunka_Leiras is a cDbCJGridColumn
+82379>>>            Entry_Item Munka.Leiras
+82380>>>            Set piWidth to 105
+82381>>>            Set psCaption to "Le¡r s"
+82382>>>        End_Object 
+82383>>>
+82383>>>        Object oMunka_Egysegar is a cDbCJGridColumn
+82385>>>            Entry_Item Munka.Egysegar
+82386>>>            Set piWidth to 105
+82387>>>            Set psCaption to "Egys‚g r"
+82388>>>        End_Object 
+82389>>>
+82389>>>        Object oMunkaMunkalap_Darab is a cDbCJGridColumn
+82391>>>            Entry_Item MunkaMunkalap.Darab
+82392>>>            Set piWidth to 105
+82393>>>            Set psCaption to "Darab"
+82394>>>        End_Object 
+82395>>>
+82395>>>    End_Object 
+82396>>>
+82396>>>    //-----------------------------------------------------------------------
+82396>>>    // Create custom confirmation messages for save and delete
+82396>>>    // We must create the new functions and assign verify messages
+82396>>>    // to them.
+82396>>>    //-----------------------------------------------------------------------
+82396>>>
+82396>>>    Function ConfirmDeleteHeader Returns Boolean
+82399>>>        Boolean bFail
+82399>>>        Get Confirm "Delete Entire Header and all detail?" to bFail
+82400>>>        Function_Return bFail
+82401>>>    End_Function 
+82402>>>
+82402>>>    // Only confirm on the saving of new records
+82402>>>    Function ConfirmSaveHeader Returns Boolean
+82405>>>        Boolean bNoSave bHasRecord
+82405>>>        Handle  hoSrvr
+82405>>>        Get Server to hoSrvr
+82406>>>        Get HasRecord of hoSrvr to bHasRecord
+82407>>>        If not bHasRecord Begin
+82409>>>            Get Confirm "Save this NEW header?" to bNoSave
+82410>>>        End
+82410>>>>
+82410>>>        Function_Return bNoSave
+82411>>>    End_Function 
+82412>>>
+82412>>>    // Define alternate confirmation Messages
+82412>>>    Set Verify_Save_MSG       to (RefFunc(ConfirmSaveHeader))
+82413>>>    Set Verify_Delete_MSG     to (RefFunc(ConfirmDeleteHeader))
+82414>>>    // Saves in header should not clear the view
+82414>>>    Set Auto_Clear_Deo_State to False
+82415>>>
+82415>>>
+82415>>>End_Object 
+82416>
+82416>        Procedure Activate_About
+82419>            Send DoAbout "" "" "" "" ""
+82420>        End_Procedure
 82421>
-82421>Start_UI
+82421>    End_Object
 82422>
+82422>End_Object
+82423>
+82423>Start_UI
+82424>
 Summary
 Memory Available: 2147483646
 Total Warnings : 0
 Total Errors   : 0
 Total Symbols  : 46823
 Total Resources: 0
-Total Commands : 82421
+Total Commands : 82423
 Total Windows  : 1
 Total Pages    : 1
-Static Data    : 509327
-Message area   : 570297
+Static Data    : 509387
+Message area   : 570335
 Total Blocks   : 29570

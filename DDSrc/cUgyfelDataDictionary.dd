@@ -36,9 +36,11 @@ Class cUgyfelDataDictionary is a DataDictionary
 
         Set Field_Label_Long Field Ugyfel.Telefon to "Telefon"
         Set Field_Label_Short Field Ugyfel.Telefon to "tel."
+        Set Field_Mask Field Ugyfel.Telefon to "+##-##-###-####"
 
         Set Field_Label_Long Field Ugyfel.Bankszamla to "Banksz mla"
         Set Field_Label_Short Field Ugyfel.Bankszamla to "Bszla."
+        Set Field_Mask Field Ugyfel.Bankszamla to "#######-########-########"
 
     End_Procedure
 
