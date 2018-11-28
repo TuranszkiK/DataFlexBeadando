@@ -20,7 +20,6 @@ Class cAutoDataDictionary is a DataDictionary
 
         Set Field_Label_Long Field Auto.Id to "Azonos¡t¢"
         Set Field_Label_Short Field Auto.Id to "Azon."
-        Set Key_Field_State Field Auto.Id to True
         Set Field_Prompt_Object Field Auto.Id to Auto_sl
 
         Set Field_Label_Long Field Auto.Alvazszam to "Alv zsz m"

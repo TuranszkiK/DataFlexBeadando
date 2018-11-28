@@ -25,7 +25,6 @@ Class cMunkalapDataDictionary is a DataDictionary
 
         Set Field_Label_Long Field Munkalap.Id to "Munkalap azonos¡t¢"
         Set Field_Label_Short Field Munkalap.Id to "Munkalap azon."
-        Set Key_Field_State Field Munkalap.Id to True
         Set Field_Prompt_Object Field Munkalap.Id to Munkalap_sl
 
         Set Field_Label_Long Field Munkalap.Rogzites to "R”gz¡t‚s"

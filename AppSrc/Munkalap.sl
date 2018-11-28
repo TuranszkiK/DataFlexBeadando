@@ -6,6 +6,8 @@ Use cDbCJGridPromptList.pkg
 Use cDbCJGridColumn.pkg
 Use Windows.pkg
 
+Use cUgyfelDataDictionary.dd
+Use cAutoDataDictionary.dd
 Use cMunkalapDataDictionary.dd
 
 CD_Popup_Object Munkalap_sl is a dbModalPanel
@@ -16,7 +18,15 @@ CD_Popup_Object Munkalap_sl is a dbModalPanel
     Set Minimize_Icon to False
 
 
+    Object oUgyfel_DD is a cUgyfelDataDictionary
+    End_Object 
+
+    Object oAuto_DD is a cAutoDataDictionary
+    End_Object 
+
     Object oMunkalap_DD is a cMunkalapDataDictionary
+        Set DDO_Server To oAuto_DD
+        Set DDO_Server To oUgyfel_DD
     End_Object 
 
     Set Main_DD To oMunkalap_DD
@@ -44,14 +54,14 @@ CD_Popup_Object Munkalap_sl is a dbModalPanel
             Set psCaption to "R”gz."
         End_Object 
 
-        Object oMunkalap_UgyfelId is a cDbCJGridColumn
-            Entry_Item Munkalap.UgyfelId
+        Object oUgyfel_Id is a cDbCJGridColumn
+            Entry_Item Ugyfel.Id
             Set piWidth to 63
             Set psCaption to "UgyfelId"
         End_Object 
 
-        Object oMunkalap_AutoId is a cDbCJGridColumn
-            Entry_Item Munkalap.AutoId
+        Object oAuto_Id is a cDbCJGridColumn
+            Entry_Item Auto.Id
             Set piWidth to 63
             Set psCaption to "AutoId"
         End_Object 

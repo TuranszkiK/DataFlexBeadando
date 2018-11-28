@@ -20,7 +20,6 @@ Class cMunkaDataDictionary is a DataDictionary
 
         Set Field_Label_Long Field Munka.Id to "Munka azonos¡t¢"
         Set Field_Label_Short Field Munka.Id to "Munka azon."
-        Set Key_Field_State Field Munka.Id to True
         Set Field_Prompt_Object Field Munka.Id to Munka_sl
 
         Set Field_Label_Long Field Munka.Name to "N‚v"

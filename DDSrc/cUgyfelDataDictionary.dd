@@ -20,7 +20,6 @@ Class cUgyfelDataDictionary is a DataDictionary
 
         Set Field_Label_Long Field Ugyfel.Id to "šgyf‚l azonos¡t¢"
         Set Field_Label_Short Field Ugyfel.Id to "šgyf. azon."
-        Set Key_Field_State Field Ugyfel.Id to True
         Set Field_Prompt_Object Field Ugyfel.Id to Ugyfel_sl
 
         Set Field_Label_Long Field Ugyfel.Nev to "N‚v"
