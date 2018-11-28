@@ -1,0 +1,20 @@
+#Exclude the following files for Visual DataFlex Projects
+####################################
+Programs/*.exe
+Programs/*.dbg
+Programs/*.exe.manifest
+Programs/WebApp.log
+AppSrc/*.dep
+AppSrc/*.fld
+AppSrc/*.pbg
+AppSrc/*.pdp
+AppSrc/*.pkd
+AppSrc/*.prp
+AppSrc/*.err
+Data/*.cch
+DDSrc/*.bak
+IdeSrc/StudioMetaData.mtd
+IdeSrc/Workspace.loc
+
+vssver2.scc
+nppBackup
