@@ -1,0 +1,43 @@
+Use DataDict.pkg
+
+Open Munka
+Open MunkaMunkalap
+
+Register_Object Munka_sl
+
+Class cMunkaDataDictionary is a DataDictionary
+    
+    Procedure Construct_Object
+        Forward Send Construct_Object
+        Set Main_File to Munka.File_Number
+
+        Set Add_Client_File to MunkaMunkalap.File_Number
+
+        Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
+        Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
+        Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
+        Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
+
+        Set Field_Label_Long Field Munka.Id to "Munka azonos¡t¢"
+        Set Field_Label_Short Field Munka.Id to "Munka azon."
+        Set Key_Field_State Field Munka.Id to True
+        Set Field_Prompt_Object Field Munka.Id to Munka_sl
+
+        Set Field_Label_Long Field Munka.Name to "N‚v"
+        Set Field_Label_Short Field Munka.Name to "N‚v"
+        Set Field_Prompt_Object Field Munka.Name to Munka_sl
+
+        Set Field_Label_Long Field Munka.Leiras to "Le¡r s"
+        Set Field_Label_Short Field Munka.Leiras to "Le¡r s"
+
+        Set Field_Label_Long Field Munka.Egysegar to "Egys‚g r"
+        Set Field_Label_Short Field Munka.Egysegar to "Egys‚g r"
+
+    End_Procedure
+
+End_Class
+
+#IFDEF Is$WebApp
+#ELSE
+Use Munka.sl
+#ENDIF

@@ -1,0 +1,10 @@
+#REPLACE FILE2 Auto
+#REPLACE Auto.Recnum |FN2,0
+#REPLACE Auto.Id |FN2,1
+#REPLACE Auto.Alvazszam |FS2,2
+#REPLACE Auto.Motorszam |FS2,3
+#REPLACE Auto.Marka |FS2,4
+#REPLACE Auto.Tipus |FS2,5
+#REPLACE Auto.Evjarat |FN2,6
+#REPLACE Auto.UtolsoSzerviz |FD2,7
+#REPLACE Auto.KmAllas |FN2,8

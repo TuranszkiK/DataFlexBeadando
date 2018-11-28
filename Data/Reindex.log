@@ -1,0 +1,11 @@
+10/17/2018 11:09:27.947 AM - Verifying filelist C:\Program Files (x86)\DataFlex 19.0\Usr\New\Data\Filelist.cfg
+10/17/2018 11:09:27.947 AM - Opening filelist C:\Program Files (x86)\DataFlex 19.0\Usr\New\Data\Filelist.cfg
+10/17/2018 11:09:27.948 AM - Start reindexing
+10/17/2018 11:09:28.006 AM - No path specified for CodeType
+10/17/2018 11:09:28.007 AM - Added path C:\Program Files (x86)\DataFlex 19.0\Usr\New\Data\ to original file name
+10/17/2018 11:09:28.007 AM - Opening C:\Program Files (x86)\DataFlex 19.0\Usr\New\Data\CodeType as 253
+10/17/2018 11:09:28.034 AM - Reindexing CodeType
+10/17/2018 11:09:28.037 AM - No path specified for CodeMast
+10/17/2018 11:09:28.038 AM - Added path C:\Program Files (x86)\DataFlex 19.0\Usr\New\Data\ to original file name
+10/17/2018 11:09:28.038 AM - Opening C:\Program Files (x86)\DataFlex 19.0\Usr\New\Data\CodeMast as 254
+10/17/2018 11:09:28.04 AM - Reindexing CodeMast

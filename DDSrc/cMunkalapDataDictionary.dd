@@ -1,0 +1,57 @@
+Use DataDict.pkg
+
+Open Munkalap
+Open Auto
+Open Ugyfel
+Open MunkaMunkalap
+
+Register_Object Munkalap_sl
+
+Class cMunkalapDataDictionary is a DataDictionary
+    
+    Procedure Construct_Object
+        Forward Send Construct_Object
+        Set Main_File to Munkalap.File_Number
+
+        Set Add_Client_File to MunkaMunkalap.File_Number
+
+        Set Add_Server_File to Auto.File_Number
+        Set Add_Server_File to Ugyfel.File_Number
+
+        Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
+        Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
+        Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
+        Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
+
+        Set Field_Label_Long Field Munkalap.Id to "Munkalap azonos¡t¢"
+        Set Field_Label_Short Field Munkalap.Id to "Munkalap azon."
+        Set Key_Field_State Field Munkalap.Id to True
+        Set Field_Prompt_Object Field Munkalap.Id to Munkalap_sl
+
+        Set Field_Label_Long Field Munkalap.Rogzites to "R”gz¡t‚s"
+        Set Field_Label_Short Field Munkalap.Rogzites to "R”gz."
+
+        Set Field_Prompt_Object Field Munkalap.UgyfelId to Munkalap_sl
+
+        Set Field_Prompt_Object Field Munkalap.AutoId to Munkalap_sl
+
+        Set Field_Label_Long Field Munkalap.Behozatal to "Behozatal"
+        Set Field_Label_Short Field Munkalap.Behozatal to "Behoz."
+
+        Set Field_Label_Long Field Munkalap.Elvitel to "Elvitel"
+        Set Field_Label_Short Field Munkalap.Elvitel to "Elvitel"
+
+        Set Field_Label_Long Field Munkalap.Akm to "Kil¢m‚ter el‹tte"
+        Set Field_Label_Short Field Munkalap.Akm to "Km el‹tte"
+
+        Set Field_Label_Long Field Munkalap.Bkm to "Kil¢m‚ter ll s ut ns"
+        Set Field_Label_Short Field Munkalap.Bkm to "Km ut na"
+
+    End_Procedure
+
+End_Class
+
+#IFDEF Is$WebApp
+#ELSE
+Use Munkalap.sl
+#ENDIF

@@ -1,0 +1,27 @@
+Use DataDict.pkg
+
+Open MunkaMunkalap
+Open Munka
+Open Munkalap
+
+Class cMunkaMunkalapDataDictionary is a DataDictionary
+    
+    Procedure Construct_Object
+        Forward Send Construct_Object
+        Set Main_File to MunkaMunkalap.File_Number
+
+        Set Add_Server_File to Munka.File_Number
+        Set Add_Server_File to Munkalap.File_Number
+
+        Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
+        Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
+        Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
+        Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
+
+        Set Key_Field_State Field MunkaMunkalap.MunkaId to True
+
+        Set Key_Field_State Field MunkaMunkalap.MunkalapId to True
+
+    End_Procedure
+
+End_Class

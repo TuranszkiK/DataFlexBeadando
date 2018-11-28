@@ -1,0 +1,10 @@
+#REPLACE FILE3 Munkalap
+#REPLACE Munkalap.Recnum |FN3,0
+#REPLACE Munkalap.Id |FN3,1
+#REPLACE Munkalap.Rogzites |FD3,2
+#REPLACE Munkalap.UgyfelId |FN3,3
+#REPLACE Munkalap.AutoId |FN3,4
+#REPLACE Munkalap.Behozatal |FD3,5
+#REPLACE Munkalap.Elvitel |FD3,6
+#REPLACE Munkalap.Akm |FN3,7
+#REPLACE Munkalap.Bkm |FN3,8

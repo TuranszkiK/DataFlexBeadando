@@ -1,0 +1,6 @@
+#REPLACE FILE4 Munka
+#REPLACE Munka.Recnum |FN4,0
+#REPLACE Munka.Id |FN4,1
+#REPLACE Munka.Name |FS4,2
+#REPLACE Munka.Leiras |FS4,3
+#REPLACE Munka.Egysegar |FN4,4

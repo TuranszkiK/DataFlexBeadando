@@ -1,0 +1,8 @@
+#REPLACE FILE1 Ugyfel
+#REPLACE Ugyfel.Recnum |FN1,0
+#REPLACE Ugyfel.Id |FN1,1
+#REPLACE Ugyfel.Nev |FS1,2
+#REPLACE Ugyfel.Adoszam |FS1,3
+#REPLACE Ugyfel.Cim |FS1,4
+#REPLACE Ugyfel.Telefon |FS1,5
+#REPLACE Ugyfel.Bankszamla |FS1,6

@@ -1,0 +1,56 @@
+Use DataDict.pkg
+
+Open Auto
+Open Munkalap
+
+Register_Object Auto_sl
+
+Class cAutoDataDictionary is a DataDictionary
+    
+    Procedure Construct_Object
+        Forward Send Construct_Object
+        Set Main_File to Auto.File_Number
+
+        Set Add_Client_File to Munkalap.File_Number
+
+        Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
+        Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
+        Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
+        Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
+
+        Set Field_Label_Long Field Auto.Id to "Azonos¡t¢"
+        Set Field_Label_Short Field Auto.Id to "Azon."
+        Set Key_Field_State Field Auto.Id to True
+        Set Field_Prompt_Object Field Auto.Id to Auto_sl
+
+        Set Field_Label_Long Field Auto.Alvazszam to "Alv zsz m"
+        Set Field_Label_Short Field Auto.Alvazszam to "Alv."
+        Set Field_Prompt_Object Field Auto.Alvazszam to Auto_sl
+
+        Set Field_Label_Long Field Auto.Motorszam to "Motorsz m"
+        Set Field_Label_Short Field Auto.Motorszam to "Motorsz."
+        Set Field_Prompt_Object Field Auto.Motorszam to Auto_sl
+
+        Set Field_Label_Long Field Auto.Marka to "M rka"
+        Set Field_Label_Short Field Auto.Marka to "M rka"
+
+        Set Field_Label_Long Field Auto.Tipus to "Tipus"
+        Set Field_Label_Short Field Auto.Tipus to "Tipus"
+
+        Set Field_Label_Long Field Auto.Evjarat to "Evjarat"
+        Set Field_Label_Short Field Auto.Evjarat to "Evj,"
+
+        Set Field_Label_Long Field Auto.UtolsoSzerviz to "Utols¢ szerv¡z"
+        Set Field_Label_Short Field Auto.UtolsoSzerviz to "Utol. szv."
+
+        Set Field_Label_Long Field Auto.KmAllas to "Kil¢m‚ter  ll s"
+        Set Field_Label_Short Field Auto.KmAllas to "Km  ll."
+
+    End_Procedure
+
+End_Class
+
+#IFDEF Is$WebApp
+#ELSE
+Use Auto.sl
+#ENDIF

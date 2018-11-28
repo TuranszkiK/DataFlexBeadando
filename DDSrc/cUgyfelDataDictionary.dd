@@ -1,0 +1,50 @@
+Use DataDict.pkg
+
+Open Ugyfel
+Open Munkalap
+
+Register_Object Ugyfel_sl
+
+Class cUgyfelDataDictionary is a DataDictionary
+    
+    Procedure Construct_Object
+        Forward Send Construct_Object
+        Set Main_File to Ugyfel.File_Number
+
+        Set Add_Client_File to Munkalap.File_Number
+
+        Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
+        Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
+        Set Foreign_Field_Option DD_INDEXFIELD DD_NOPUT to True
+        Set Foreign_Field_Option DD_DEFAULT DD_DISPLAYONLY to True
+
+        Set Field_Label_Long Field Ugyfel.Id to "šgyf‚l azonos¡t¢"
+        Set Field_Label_Short Field Ugyfel.Id to "šgyf. azon."
+        Set Key_Field_State Field Ugyfel.Id to True
+        Set Field_Prompt_Object Field Ugyfel.Id to Ugyfel_sl
+
+        Set Field_Label_Long Field Ugyfel.Nev to "N‚v"
+        Set Field_Label_Short Field Ugyfel.Nev to "N‚v"
+        Set Field_Prompt_Object Field Ugyfel.Nev to Ugyfel_sl
+
+        Set Field_Mask Field Ugyfel.Adoszam to "########-#-##"
+        Set Field_Label_Long Field Ugyfel.Adoszam to "Ad¢sz m"
+        Set Field_Label_Short Field Ugyfel.Adoszam to "A.sz."
+
+        Set Field_Label_Long Field Ugyfel.Cim to "C¡m"
+        Set Field_Label_Short Field Ugyfel.Cim to "C¡m"
+
+        Set Field_Label_Long Field Ugyfel.Telefon to "Telefon"
+        Set Field_Label_Short Field Ugyfel.Telefon to "tel."
+
+        Set Field_Label_Long Field Ugyfel.Bankszamla to "Banksz mla"
+        Set Field_Label_Short Field Ugyfel.Bankszamla to "Bszla."
+
+    End_Procedure
+
+End_Class
+
+#IFDEF Is$WebApp
+#ELSE
+Use Ugyfel.sl
+#ENDIF
