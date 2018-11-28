@@ -1,8 +1,8 @@
 Use DataDict.pkg
 
 Open MunkaMunkalap
-Open Munka
 Open Munkalap
+Open Munka
 
 Class cMunkaMunkalapDataDictionary is a DataDictionary
     
@@ -10,8 +10,8 @@ Class cMunkaMunkalapDataDictionary is a DataDictionary
         Forward Send Construct_Object
         Set Main_File to MunkaMunkalap.File_Number
 
-        Set Add_Server_File to Munka.File_Number
         Set Add_Server_File to Munkalap.File_Number
+        Set Add_Server_File to Munka.File_Number
 
         Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
         Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True

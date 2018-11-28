@@ -4558,8 +4558,8 @@ Including file: cMunkaMunkalapDataDictionary.dd    (C:\Repos\DataFlexBeadando\DD
 82177>>>>>Use DataDict.pkg
 82177>>>>>
 82177>>>>>Open MunkaMunkalap
-82179>>>>>Open Munka
-82181>>>>>Open Munkalap
+82179>>>>>Open Munkalap
+82181>>>>>Open Munka
 82183>>>>>
 82183>>>>>Class cMunkaMunkalapDataDictionary is a DataDictionary
 82184>>>>>    
@@ -4567,8 +4567,8 @@ Including file: cMunkaMunkalapDataDictionary.dd    (C:\Repos\DataFlexBeadando\DD
 82186>>>>>        Forward Send Construct_Object
 82188>>>>>        Set Main_File to MunkaMunkalap.File_Number
 82189>>>>>
-82189>>>>>        Set Add_Server_File to Munka.File_Number
-82190>>>>>        Set Add_Server_File to Munkalap.File_Number
+82189>>>>>        Set Add_Server_File to Munkalap.File_Number
+82190>>>>>        Set Add_Server_File to Munka.File_Number
 82191>>>>>
 82191>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True
 82192>>>>>        Set Foreign_Field_Option DD_KEYFIELD DD_FINDREQ to True
@@ -4583,7 +4583,7 @@ Including file: cMunkaMunkalapDataDictionary.dd    (C:\Repos\DataFlexBeadando\DD
 82207>>>>
 82207>>>Object oMunkalap is a dbView
 82209>>>    Set Location to 5 5
-82210>>>    Set Size to 159 446
+82210>>>    Set Size to 249 369
 82211>>>    Set Label To "Munkalap"
 82212>>>    Set Border_Style to Border_Thick
 82213>>>
@@ -4605,8 +4605,8 @@ Including file: cMunkaMunkalapDataDictionary.dd    (C:\Repos\DataFlexBeadando\DD
 82227>>>    End_Object 
 82228>>>
 82228>>>    Object oMunkaMunkalap_DD is a cMunkaMunkalapDataDictionary
-82230>>>        Set DDO_Server To oMunka_DD
-82231>>>        Set DDO_Server To oMunkalap_DD
+82230>>>        Set DDO_Server To oMunkalap_DD
+82231>>>        Set DDO_Server To oMunka_DD
 82232>>>        Set Constrain_File To Munkalap.File_Number
 82233>>>    End_Object 
 82234>>>
@@ -4640,18 +4640,18 @@ Including file: cMunkaMunkalapDataDictionary.dd    (C:\Repos\DataFlexBeadando\DD
 82258>>>    Object oUgyfelNev is a dbForm
 82260>>>        Entry_Item Ugyfel.Nev
 82261>>>        Set Size to 13 250
-82262>>>        Set Location to 20 129
-82263>>>        Set peAnchors to anTopRight
+82262>>>        Set Location to 35 68
+82263>>>        Set peAnchors to anTopLeftRight
 82264>>>        Set Label to "N‚v"
 82265>>>        Set Label_Justification_mode to jMode_Left
-82266>>>        Set Label_Col_Offset to 14
+82266>>>        Set Label_Col_Offset to 63
 82267>>>        Set Label_row_Offset to 0
 82268>>>    End_Object 
 82269>>>
 82269>>>    Object oAutoId is a dbForm
 82271>>>        Entry_Item Auto.Id
 82272>>>        Set Size to 13 42
-82273>>>        Set Location to 35 68
+82273>>>        Set Location to 50 68
 82274>>>        Set peAnchors to anTopLeftRight
 82275>>>        Set Label to "Azonos¡t¢"
 82276>>>        Set Label_Justification_mode to jMode_Left
@@ -4662,29 +4662,29 @@ Including file: cMunkaMunkalapDataDictionary.dd    (C:\Repos\DataFlexBeadando\DD
 82280>>>    Object oAutoAlvazszam is a dbForm
 82282>>>        Entry_Item Auto.Alvazszam
 82283>>>        Set Size to 13 126
-82284>>>        Set Location to 35 148
-82285>>>        Set peAnchors to anTopRight
+82284>>>        Set Location to 65 68
+82285>>>        Set peAnchors to anTopLeftRight
 82286>>>        Set Label to "Alv zsz m"
 82287>>>        Set Label_Justification_mode to jMode_Left
-82288>>>        Set Label_Col_Offset to 33
+82288>>>        Set Label_Col_Offset to 63
 82289>>>        Set Label_row_Offset to 0
 82290>>>    End_Object 
 82291>>>
 82291>>>    Object oAutoMotorszam is a dbForm
 82293>>>        Entry_Item Auto.Motorszam
 82294>>>        Set Size to 13 126
-82295>>>        Set Location to 35 315
-82296>>>        Set peAnchors to anTopRight
+82295>>>        Set Location to 80 68
+82296>>>        Set peAnchors to anTopLeftRight
 82297>>>        Set Label to "Motorsz m"
 82298>>>        Set Label_Justification_mode to jMode_Left
-82299>>>        Set Label_Col_Offset to 36
+82299>>>        Set Label_Col_Offset to 63
 82300>>>        Set Label_row_Offset to 0
 82301>>>    End_Object 
 82302>>>
 82302>>>    Object oMunkalapRogzites is a dbForm
 82304>>>        Entry_Item Munkalap.Rogzites
 82305>>>        Set Size to 13 66
-82306>>>        Set Location to 50 68
+82306>>>        Set Location to 95 68
 82307>>>        Set peAnchors to anTopLeftRight
 82308>>>        Set Label to "R”gz¡t‚s"
 82309>>>        Set Label_Justification_mode to jMode_Left
@@ -4695,29 +4695,29 @@ Including file: cMunkaMunkalapDataDictionary.dd    (C:\Repos\DataFlexBeadando\DD
 82313>>>    Object oMunkalapBehozatal is a dbForm
 82315>>>        Entry_Item Munkalap.Behozatal
 82316>>>        Set Size to 13 66
-82317>>>        Set Location to 50 170
-82318>>>        Set peAnchors to anTopRight
+82317>>>        Set Location to 110 68
+82318>>>        Set peAnchors to anTopLeftRight
 82319>>>        Set Label to "Behozatal"
 82320>>>        Set Label_Justification_mode to jMode_Left
-82321>>>        Set Label_Col_Offset to 31
+82321>>>        Set Label_Col_Offset to 63
 82322>>>        Set Label_row_Offset to 0
 82323>>>    End_Object 
 82324>>>
 82324>>>    Object oMunkalapElvitel is a dbForm
 82326>>>        Entry_Item Munkalap.Elvitel
 82327>>>        Set Size to 13 66
-82328>>>        Set Location to 50 261
-82329>>>        Set peAnchors to anTopRight
+82328>>>        Set Location to 125 68
+82329>>>        Set peAnchors to anTopLeftRight
 82330>>>        Set Label to "Elvitel"
 82331>>>        Set Label_Justification_mode to jMode_Left
-82332>>>        Set Label_Col_Offset to 20
+82332>>>        Set Label_Col_Offset to 63
 82333>>>        Set Label_row_Offset to 0
 82334>>>    End_Object 
 82335>>>
 82335>>>    Object oMunkalapAkm is a dbForm
 82337>>>        Entry_Item Munkalap.Akm
 82338>>>        Set Size to 13 66
-82339>>>        Set Location to 65 68
+82339>>>        Set Location to 140 68
 82340>>>        Set peAnchors to anTopLeftRight
 82341>>>        Set Label to "Kil¢m‚ter el‹tte"
 82342>>>        Set Label_Justification_mode to jMode_Left
@@ -4728,8 +4728,8 @@ Including file: cMunkaMunkalapDataDictionary.dd    (C:\Repos\DataFlexBeadando\DD
 82346>>>    Object oMunkalapBkm is a dbForm
 82348>>>        Entry_Item Munkalap.Bkm
 82349>>>        Set Size to 13 66
-82350>>>        Set Location to 65 202
-82351>>>        Set peAnchors to anTopRight
+82350>>>        Set Location to 155 68
+82351>>>        Set peAnchors to anTopLeftRight
 82352>>>        Set Label to "Kil¢m‚ter ll s ut ns"
 82353>>>        Set Label_Justification_mode to jMode_Left
 82354>>>        Set Label_Col_Offset to 63
@@ -4738,9 +4738,9 @@ Including file: cMunkaMunkalapDataDictionary.dd    (C:\Repos\DataFlexBeadando\DD
 82357>>>
 82357>>>    Object oDetailGrid is a cDbCJGrid
 82359>>>        Set Size to 66 359
-82360>>>        Set Location to 88 5
+82360>>>        Set Location to 178 5
 82361>>>        Set Server to oMunkaMunkalap_DD
-82362>>>        Set Ordering to 3
+82362>>>        Set Ordering to 1
 82363>>>        Set peAnchors to anAll
 82364>>>        Set psLayoutSection to "oMunkalap_oDetailGrid"
 82365>>>        Set pbAllowInsertRow to False

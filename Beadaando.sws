@@ -2,7 +2,7 @@
 Version=19.0
 [WorkspacePaths]
 ConfigFile=.\Programs\Config.ws
-[Projects]
-Project0=Szerelo.src
 [Conditionals]
 Is$WebApp=False
+[Projects]
+Project0=Szerelo.src

@@ -16,7 +16,7 @@ Use cMunkaMunkalapDataDictionary.dd
 ACTIVATE_VIEW Activate_oMunkalap FOR oMunkalap
 Object oMunkalap is a dbView
     Set Location to 5 5
-    Set Size to 159 446
+    Set Size to 249 369
     Set Label To "Munkalap"
     Set Border_Style to Border_Thick
 
@@ -38,8 +38,8 @@ Object oMunkalap is a dbView
     End_Object 
 
     Object oMunkaMunkalap_DD is a cMunkaMunkalapDataDictionary
-        Set DDO_Server To oMunka_DD
         Set DDO_Server To oMunkalap_DD
+        Set DDO_Server To oMunka_DD
         Set Constrain_File To Munkalap.File_Number
     End_Object 
 
@@ -73,18 +73,18 @@ Object oMunkalap is a dbView
     Object oUgyfelNev is a dbForm
         Entry_Item Ugyfel.Nev
         Set Size to 13 250
-        Set Location to 20 129
-        Set peAnchors to anTopRight
+        Set Location to 35 68
+        Set peAnchors to anTopLeftRight
         Set Label to "N‚v"
         Set Label_Justification_mode to jMode_Left
-        Set Label_Col_Offset to 14
+        Set Label_Col_Offset to 63
         Set Label_row_Offset to 0
     End_Object 
 
     Object oAutoId is a dbForm
         Entry_Item Auto.Id
         Set Size to 13 42
-        Set Location to 35 68
+        Set Location to 50 68
         Set peAnchors to anTopLeftRight
         Set Label to "Azonos¡t¢"
         Set Label_Justification_mode to jMode_Left
@@ -95,29 +95,29 @@ Object oMunkalap is a dbView
     Object oAutoAlvazszam is a dbForm
         Entry_Item Auto.Alvazszam
         Set Size to 13 126
-        Set Location to 35 148
-        Set peAnchors to anTopRight
+        Set Location to 65 68
+        Set peAnchors to anTopLeftRight
         Set Label to "Alv zsz m"
         Set Label_Justification_mode to jMode_Left
-        Set Label_Col_Offset to 33
+        Set Label_Col_Offset to 63
         Set Label_row_Offset to 0
     End_Object 
 
     Object oAutoMotorszam is a dbForm
         Entry_Item Auto.Motorszam
         Set Size to 13 126
-        Set Location to 35 315
-        Set peAnchors to anTopRight
+        Set Location to 80 68
+        Set peAnchors to anTopLeftRight
         Set Label to "Motorsz m"
         Set Label_Justification_mode to jMode_Left
-        Set Label_Col_Offset to 36
+        Set Label_Col_Offset to 63
         Set Label_row_Offset to 0
     End_Object 
 
     Object oMunkalapRogzites is a dbForm
         Entry_Item Munkalap.Rogzites
         Set Size to 13 66
-        Set Location to 50 68
+        Set Location to 95 68
         Set peAnchors to anTopLeftRight
         Set Label to "R”gz¡t‚s"
         Set Label_Justification_mode to jMode_Left
@@ -128,29 +128,29 @@ Object oMunkalap is a dbView
     Object oMunkalapBehozatal is a dbForm
         Entry_Item Munkalap.Behozatal
         Set Size to 13 66
-        Set Location to 50 170
-        Set peAnchors to anTopRight
+        Set Location to 110 68
+        Set peAnchors to anTopLeftRight
         Set Label to "Behozatal"
         Set Label_Justification_mode to jMode_Left
-        Set Label_Col_Offset to 31
+        Set Label_Col_Offset to 63
         Set Label_row_Offset to 0
     End_Object 
 
     Object oMunkalapElvitel is a dbForm
         Entry_Item Munkalap.Elvitel
         Set Size to 13 66
-        Set Location to 50 261
-        Set peAnchors to anTopRight
+        Set Location to 125 68
+        Set peAnchors to anTopLeftRight
         Set Label to "Elvitel"
         Set Label_Justification_mode to jMode_Left
-        Set Label_Col_Offset to 20
+        Set Label_Col_Offset to 63
         Set Label_row_Offset to 0
     End_Object 
 
     Object oMunkalapAkm is a dbForm
         Entry_Item Munkalap.Akm
         Set Size to 13 66
-        Set Location to 65 68
+        Set Location to 140 68
         Set peAnchors to anTopLeftRight
         Set Label to "Kil¢m‚ter el‹tte"
         Set Label_Justification_mode to jMode_Left
@@ -161,8 +161,8 @@ Object oMunkalap is a dbView
     Object oMunkalapBkm is a dbForm
         Entry_Item Munkalap.Bkm
         Set Size to 13 66
-        Set Location to 65 202
-        Set peAnchors to anTopRight
+        Set Location to 155 68
+        Set peAnchors to anTopLeftRight
         Set Label to "Kil¢m‚ter ll s ut ns"
         Set Label_Justification_mode to jMode_Left
         Set Label_Col_Offset to 63
@@ -171,9 +171,9 @@ Object oMunkalap is a dbView
 
     Object oDetailGrid is a cDbCJGrid
         Set Size to 66 359
-        Set Location to 88 5
+        Set Location to 178 5
         Set Server to oMunkaMunkalap_DD
-        Set Ordering to 3
+        Set Ordering to 1
         Set peAnchors to anAll
         Set psLayoutSection to "oMunkalap_oDetailGrid"
         Set pbAllowInsertRow to False

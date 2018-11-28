@@ -1,5 +1,5 @@
 #REPLACE FILE5 MunkaMunkalap
 #REPLACE MunkaMunkalap.Recnum |FN5,0
-#REPLACE MunkaMunkalap.MunkaId |FN5,1
-#REPLACE MunkaMunkalap.MunkalapId |FN5,2
+#REPLACE MunkaMunkalap.MunkalapId |FN5,1
+#REPLACE MunkaMunkalap.MunkaId |FN5,2
 #REPLACE MunkaMunkalap.Darab |FN5,3
