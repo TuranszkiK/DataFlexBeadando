@@ -143,13 +143,57 @@ Object oMain is a Panel
                         Send Activate_oMunkalap of hoClient
                     End_Procedure
                 End_Object
+
+                Object oMunkalapKeszitesMenuItem is a cCJMenuItem
+                    Set psCaption to "MunkalapKeszites"
+                    Set psTooltip to "MunkalapKeszites"
+                
+                    Procedure OnExecute Variant vCommandBarControl
+                        Handle hoClient
+                        Get Client_Id to hoClient
+                        Send Activate_oMunkalapKeszites of hoClient
+                    End_Procedure
+                End_Object
             End_Object
             
             Object oReportMenu is a cCJMenuItem
-                Set peControlType to xtpControlPopup          
+                Set peControlType to xtpControlPopup
                 Set psCaption to "&Report"
                 Set psToolTip to "Report"
                 Set psDescription to "Available Reports"
+
+                Object oGyakorisagRiportMenuItem is a cCJMenuItem
+                    Set psCaption to "GyakorisagRiport"
+                    Set psTooltip to "GyakorisagRiport"
+                
+                    Procedure OnExecute Variant vCommandBarControl
+                        Handle hoClient
+                        Get Client_Id to hoClient
+                        Send Activate_oGyakorisagRiport of hoClient
+                    End_Procedure
+                End_Object
+
+                Object oReportMenuItem is a cCJMenuItem
+                    Set psCaption to "Report"
+                    Set psTooltip to "Report"
+                
+                    Procedure OnExecute Variant vCommandBarControl
+                        Handle hoClient
+                        Get Client_Id to hoClient
+                        Send Activate_oReport of hoClient
+                    End_Procedure
+                End_Object
+
+                Object oReport2MenuItem is a cCJMenuItem
+                    Set psCaption to "Report2"
+                    Set psTooltip to "Report2"
+                
+                    Procedure OnExecute Variant vCommandBarControl
+                        Handle hoClient
+                        Get Client_Id to hoClient
+                        Send Activate_oReport2 of hoClient
+                    End_Procedure
+                End_Object
             End_Object
 
             Object oNavigateMenu is a cCJMenuItem
@@ -358,6 +402,10 @@ Object oMain is a Panel
         Use Munka.vw
         Use Ugyfel.vw
         Use Munkalap.vw
+        Use GyakorisagRiport.rv
+        Use Report.rv
+        Use MunkalapKeszites.vw
+        Use Report2.rv
 
         Procedure Activate_About
             Send DoAbout "" "" "" "" ""
