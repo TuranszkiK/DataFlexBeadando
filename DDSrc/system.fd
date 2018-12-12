@@ -1,0 +1,6 @@
+#REPLACE FILE6 system
+#REPLACE system.Recnum |FN6,0
+#REPLACE system.AutoId |FN6,1
+#REPLACE system.MunkaId |FN6,2
+#REPLACE system.MunkalapId |FN6,3
+#REPLACE system.UgyfelId |FN6,4

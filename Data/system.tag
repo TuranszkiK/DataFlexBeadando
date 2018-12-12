@@ -1,0 +1,4 @@
+AutoId
+MunkaId
+MunkalapId
+UgyfelId

@@ -45,6 +45,8 @@ Class cMunkalapDataDictionary is a DataDictionary
 
         Set Field_Label_Long Field Munkalap.Bkm to "Kil¢m‚ter ll s ut ns"
         Set Field_Label_Short Field Munkalap.Bkm to "Km ut na"
+        Set Protect_Key_State to False
+        Set Allow_Foreign_New_Save_State to True
 
     End_Procedure
 
