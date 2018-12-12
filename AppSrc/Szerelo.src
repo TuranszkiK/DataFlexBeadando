@@ -194,6 +194,39 @@ Object oMain is a Panel
                         Send Activate_oReport2 of hoClient
                     End_Procedure
                 End_Object
+
+                Object oReport3MenuItem is a cCJMenuItem
+                    Set psCaption to "Report3"
+                    Set psTooltip to "Report3"
+                
+                    Procedure OnExecute Variant vCommandBarControl
+                        Handle hoClient
+                        Get Client_Id to hoClient
+                        Send Activate_oReport3 of hoClient
+                    End_Procedure
+                End_Object
+
+                Object oReport4MenuItem is a cCJMenuItem
+                    Set psCaption to "Report4"
+                    Set psTooltip to "Report4"
+                
+                    Procedure OnExecute Variant vCommandBarControl
+                        Handle hoClient
+                        Get Client_Id to hoClient
+                        Send Activate_oReport4 of hoClient
+                    End_Procedure
+                End_Object
+
+                Object oVeglegesReportMenuItem is a cCJMenuItem
+                    Set psCaption to "VeglegesReport"
+                    Set psTooltip to "VeglegesReport"
+                
+                    Procedure OnExecute Variant vCommandBarControl
+                        Handle hoClient
+                        Get Client_Id to hoClient
+                        Send Activate_oVeglegesReport of hoClient
+                    End_Procedure
+                End_Object
             End_Object
 
             Object oNavigateMenu is a cCJMenuItem
@@ -406,6 +439,9 @@ Object oMain is a Panel
         Use Report.rv
         Use MunkalapKeszites.vw
         Use Report2.rv
+        Use Report3.rv
+        Use Report4.rv
+        Use VeglegesReport.rv
 
         Procedure Activate_About
             Send DoAbout "" "" "" "" ""
